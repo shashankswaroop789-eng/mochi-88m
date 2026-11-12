@@ -478,10 +478,16 @@ class StoryStudioGUI(tk.Tk):
                 self.device = device
                 self.queue.put(("status", f"Loading weights into {device.upper()}..."))
 
+                load_path = MODEL_PATH if os.path.exists(MODEL_PATH) else FALLBACK_MODEL_PATH
+                if not os.path.exists(load_path) or not os.path.exists(TOKENIZER_PATH):
+                    self.queue.put(("status", "Downloading Mochi-88M weights from Hugging Face..."))
+                    import subprocess
+                    subprocess.run([sys.executable, os.path.join(BASE_DIR, "download_model.py")], check=True)
+                    load_path = MODEL_PATH
+
                 sp = spm.SentencePieceProcessor()
                 sp.load(TOKENIZER_PATH)
 
-                load_path = MODEL_PATH if os.path.exists(MODEL_PATH) else FALLBACK_MODEL_PATH
                 ckpt = torch.load(load_path, map_location=device, weights_only=False)
                 config = ckpt.get("config", {})
                 

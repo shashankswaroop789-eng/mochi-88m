@@ -61,11 +61,12 @@ To make the model accessible without touching a terminal, I built **Mochi Story 
 
 ---
 
-📂 **The entire codebase is open-source on GitHub:**  
-👉 https://github.com/shashankswaroop789-eng/mochi-88m
+📂 **Code & Model Weights are Open-Source:**  
+👉 **GitHub Repo:** https://github.com/shashankswaroop789-eng/mochi-88m  
+🤗 **Hugging Face Model:** https://huggingface.co/Shashank1227/mochi-88m  
 
-*(Includes architecture implementation, unit tests, pre-training scripts, SFT packers, and the Mochi Story Studio GUI).*
+*(Includes architecture code, unit tests, pre-training scripts, SFT packers, and the Mochi Story Studio desktop GUI).*
 
 Would love to hear thoughts, feedback, and questions from fellow ML engineers and researchers!
 
-#MachineLearning #DeepLearning #PyTorch #LLM #GenerativeAI #ArtificialIntelligence #NLP #OpenSource #AI #SoftwareEngineering #Mochi88M
+#MachineLearning #DeepLearning #PyTorch #LLM #GenerativeAI #ArtificialIntelligence #NLP #OpenSource #AI #SoftwareEngineering #Mochi88M #HuggingFace

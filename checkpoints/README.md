@@ -1,17 +1,23 @@
 # 🍡 Mochi-88M Checkpoints
 
-This directory is used to store trained PyTorch model checkpoints (`.pt` files).
-Because model weights exceed GitHub's 100MB file limit, they are tracked via `.gitignore`.
+The official model checkpoints for **Mochi-88M** are hosted on the **Hugging Face Hub**:
+🔗 **https://huggingface.co/Shashank1227/mochi-88m**
 
-## Available Weights
-1. **`hf_coherent_story_gpt88m.pt` (Mochi-88M Recommended)**: 
+Because weights exceed GitHub's 100MB limit, `.pt` files are ignored in git and can be downloaded with 1 command:
+```bash
+python download_model.py
+```
+
+## Available Weights on Hugging Face
+1. **`hf_coherent_story_gpt88m.pt` (Recommended)**: 
    - 88.1M parameter model fine-tuned with prompt loss masking on focused narrative short stories.
    - Ideal for creative writing, zero word salad, high coherence.
-2. **`hf_master_gpt88m.pt` (Mochi-88M Foundation)**:
-   - 88.1M parameter foundation model pre-trained on modern English narrative corpora (~30M tokens).
+   - Download link: `https://huggingface.co/Shashank1227/mochi-88m/resolve/main/hf_coherent_story_gpt88m.pt`
+2. **`spm_hf_master.model`**:
+   - 4,096-token SentencePiece BPE tokenizer.
+   - Download link: `https://huggingface.co/Shashank1227/mochi-88m/resolve/main/spm_hf_master.model`
 
 ## Checkpoint Format
-Each checkpoint contains:
 ```python
 {
     "step": int,
@@ -30,7 +36,7 @@ Each checkpoint contains:
 }
 ```
 
-To load a checkpoint:
+## Loading Weights
 ```python
 import torch
 from modern_transformer import ModernGPT
@@ -38,4 +44,5 @@ from modern_transformer import ModernGPT
 ckpt = torch.load("hf_coherent_story_gpt88m.pt", map_location="cuda")
 model = ModernGPT(**ckpt["config"])
 model.load_state_dict(ckpt["model_state_dict"])
+model.eval()
 ```

@@ -1,6 +1,7 @@
 # 🍡 Mochi-88M: A Sweet, Compact Storytelling LLM Built From Scratch in PyTorch
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.1+-EE4C2C.svg?style=flat&logo=pytorch)](https://pytorch.org/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Mochi--88M-FFD21E.svg)](https://huggingface.co/Shashank1227/mochi-88m)
 [![CUDA](https://img.shields.io/badge/CUDA-12.0+-76B900.svg?style=flat&logo=nvidia)](https://developer.nvidia.com/cuda-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: Modern LLaMA--Style](https://img.shields.io/badge/Architecture-RoPE%20%7C%20SwiGLU%20%7C%20RMSNorm-blue.svg)](#architecture)
@@ -166,13 +167,19 @@ mochi-88m/
 
 ## 🚀 Quickstart Guide
 
-### 1. Installation
+### 1. Installation & Weights Download
 Clone the repository and install the lightweight requirements:
 ```bash
 git clone https://github.com/shashankswaroop789-eng/mochi-88m.git
 cd mochi-88m
 pip install -r requirements.txt
 ```
+
+Download the pre-trained weights from Hugging Face Hub (1-click):
+```bash
+python download_model.py
+```
+*(Weights repository: [huggingface.co/Shashank1227/mochi-88m](https://huggingface.co/Shashank1227/mochi-88m))*
 
 ### 2. Verify Architecture
 Run the unit test suite to verify mathematical correctness:

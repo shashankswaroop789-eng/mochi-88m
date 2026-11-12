@@ -43,19 +43,10 @@ def main():
     model_path = os.path.join(BASE_DIR, args.model)
     tokenizer_path = os.path.join(BASE_DIR, args.tokenizer)
 
-    if not os.path.exists(tokenizer_path):
-        print(f"[Error] Tokenizer not found at: {tokenizer_path}")
-        sys.exit(1)
-
-    if not os.path.exists(model_path):
-        # Check fallback
-        fallback = os.path.join(BASE_DIR, "hf_master_gpt88m.pt")
-        if os.path.exists(fallback):
-            model_path = fallback
-            print(f"[Notice] Requested model not found. Using fallback: {model_path}")
-        else:
-            print(f"[Error] Checkpoint not found at: {model_path}")
-            sys.exit(1)
+    if not os.path.exists(tokenizer_path) or not os.path.exists(model_path):
+        print("[Mochi-88M] Missing model weights or tokenizer. Downloading from Hugging Face...")
+        import subprocess
+        subprocess.run([sys.executable, os.path.join(BASE_DIR, "download_model.py")], check=True)
 
     print("=" * 80)
     print(" 🍡 Mochi-88M - High Performance Story Inference Engine")
