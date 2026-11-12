@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch Checkpoints and Model Weights (>100MB Git limit)
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+!checkpoints/.gitkeep
+
+# Large Datasets and Raw Corpora
+*.parquet
+*.arrow
+tinystories*.txt
+pure_modern_english_corpus.txt
+master_story_corpus.txt
+scrubbed_clean_romance_corpus.txt
+rajput_dynasty_corpus.txt
+*.jsonl
+!data/samples/*.jsonl
+
+# Generated Novel and Story Outputs
+novel_output/
+*.log
+
+# Python Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scratch and Archive folders
+archive/
+custom_books/

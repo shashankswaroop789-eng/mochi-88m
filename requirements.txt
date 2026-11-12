@@ -1,0 +1,4 @@
+# ModernGPT 88.1M - Requirements
+torch>=2.1.0
+sentencepiece>=0.1.99
+tqdm>=4.65.0
