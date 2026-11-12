@@ -62,7 +62,7 @@ To make the model accessible without touching a terminal, I built **Mochi Story 
 ---
 
 📂 **The entire codebase is open-source on GitHub:**  
-👉 `[INSERT YOUR GITHUB REPOSITORY LINK HERE]`
+👉 https://github.com/shashankswaroop789-eng/mochi-88m
 
 *(Includes architecture implementation, unit tests, pre-training scripts, SFT packers, and the Mochi Story Studio GUI).*
 

@@ -169,7 +169,7 @@ mochi-88m/
 ### 1. Installation
 Clone the repository and install the lightweight requirements:
 ```bash
-git clone https://github.com/your-username/mochi-88m.git
+git clone https://github.com/shashankswaroop789-eng/mochi-88m.git
 cd mochi-88m
 pip install -r requirements.txt
 ```
