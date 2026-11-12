@@ -1,4 +1,4 @@
-# ModernGPT-88M: Modern LLM Architecture Built From Scratch in PyTorch
+# 🍡 Mochi-88M: A Sweet, Compact Storytelling LLM Built From Scratch in PyTorch
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.1+-EE4C2C.svg?style=flat&logo=pytorch)](https://pytorch.org/)
 [![CUDA](https://img.shields.io/badge/CUDA-12.0+-76B900.svg?style=flat&logo=nvidia)](https://developer.nvidia.com/cuda-toolkit)
@@ -6,13 +6,13 @@
 [![Architecture: Modern LLaMA--Style](https://img.shields.io/badge/Architecture-RoPE%20%7C%20SwiGLU%20%7C%20RMSNorm-blue.svg)](#architecture)
 [![Inference: KV--Cache](https://img.shields.io/badge/Inference-57%20tok%2Fs%20(RTX%203060)-emerald.svg)](#benchmarks)
 
-**ModernGPT-88M** is an 88.1 million parameter modern Large Language Model designed, implemented, pre-trained, and fine-tuned **100% from scratch** in pure PyTorch—without depending on Hugging Face `transformers` modeling code.
+**Mochi-88M** (🍡) is a bite-sized, 88.1 million parameter modern Large Language Model designed, implemented, pre-trained, and fine-tuned **100% from scratch in pure PyTorch**—without depending on Hugging Face `transformers` modeling code.
 
-It implements contemporary LLM architectural primitives (used in **LLaMA 3**, **Mistral**, and **Gemma**) including **Rotary Position Embeddings (RoPE)**, **RMSNorm**, **SwiGLU feed-forward networks**, and **Key-Value (KV) Caching** for high-throughput local inference on consumer GPUs.
+Named after the sweet, compact delicacy, **Mochi-88M** is engineered specifically for local, highly coherent narrative generation on consumer GPUs. It incorporates state-of-the-art LLM architectural primitives (the same building blocks found in **LLaMA 3**, **Mistral**, and **Gemma**) including **Rotary Position Embeddings (RoPE)**, **RMSNorm**, **SwiGLU feed-forward networks**, and **Key-Value (KV) Caching**.
 
 ---
 
-## Architecture Overview
+## 🏗️ Architecture Overview
 
 ```
 Input Tokens (B, T)
@@ -48,12 +48,12 @@ Input Tokens (B, T)
 1. **Rotary Position Embeddings (RoPE):**
    - Replaces traditional absolute learned position embeddings with complex rotations in the 2D plane:
    $$\mathbf{q}_m = \mathbf{R}_{\Theta, m}^d \mathbf{W}_q \mathbf{x}_m, \quad \mathbf{k}_n = \mathbf{R}_{\Theta, n}^d \mathbf{W}_k \mathbf{x}_n$$
-   - Naturally preserves relative distance between tokens and improves extrapolation over long sequences.
+   - Naturally preserves relative token distances and improves sequence extrapolation.
 
 2. **RMSNorm (Root Mean Square Layer Normalization):**
-   - Replaces standard LayerNorm by normalizing inputs based on root mean square without mean-centering:
+   - Normalizes inputs based on root mean square without mean-centering:
    $$\text{RMSNorm}(\mathbf{x}) = \frac{\mathbf{x}}{\sqrt{\frac{1}{d}\sum_{i=1}^d x_i^2 + \epsilon}} \odot \boldsymbol{\gamma}$$
-   - ~30% computational speedup over standard LayerNorm while stabilizing gradient variance.
+   - Yields a ~30% computational speedup over standard LayerNorm while stabilizing gradient variance.
 
 3. **SwiGLU Gated Linear Units:**
    - Replaces classic GELU/ReLU MLPs with a gating mechanism:
@@ -69,12 +69,13 @@ Input Tokens (B, T)
 
 ---
 
-## Specifications & Benchmarks
+## ⚡ Specifications & Benchmarks
 
-All benchmarks measured on consumer hardware (**NVIDIA GeForce RTX 3060 Laptop GPU, 6 GB VRAM**):
+Measured on consumer hardware (**NVIDIA GeForce RTX 3060 Laptop GPU, 6 GB VRAM**):
 
 | Metric | Specification |
 | :--- | :--- |
+| **Model Name** | **Mochi-88M (🍡)** |
 | **Total Parameters** | **88,141,824 (88.1M)** |
 | **Active Layers** | 12 Blocks |
 | **Attention Heads** | 12 Heads (Head Dim: 64) |
@@ -90,13 +91,13 @@ All benchmarks measured on consumer hardware (**NVIDIA GeForce RTX 3060 Laptop G
 
 ---
 
-## Story Studio GUI
+## 🍡 Mochi Story Studio (Native Desktop GUI)
 
-ModernGPT-88M features **Story Studio**, a native dark-mode Desktop GUI built in Tkinter that enables anyone to generate, read, and export stories without touching the command line.
+**Mochi-88M** includes **Mochi Story Studio**, a native dark-mode Desktop GUI built in Tkinter that allows anyone to generate, read, and export stories without using a terminal.
 
 ### Key GUI Features
-* **Zero-Terminal Setup:** Launch via desktop shortcut or double-click `.bat`.
-* **Real-Time Token Streaming:** Direct streaming to the text viewport with live word counts and tokens/sec telemetry.
+* **Zero-Terminal Setup:** Launch with 1-click via desktop shortcut or `Launch_Story_Studio.bat`.
+* **Real-Time Token Streaming:** Direct streaming to the text viewport with live word counts and tok/s telemetry.
 * **1-Click Story Presets:** Pre-tuned prompt configurations for immediate high-coherence generation.
 * **Dynamic Generation Settings:** Live sliders for temperature, repetition penalty, and target word count.
 * **Multi-Scene Continuation:** Interactive prompts to direct the next scene while retaining prior narrative context.
@@ -104,9 +105,9 @@ ModernGPT-88M features **Story Studio**, a native dark-mode Desktop GUI built in
 
 ---
 
-## Qualitative Sample Output
+## 📖 Qualitative Sample Output
 
-Generated autonomously by **ModernGPT 88.1M** (Seed: 42, Temperature: 0.65, Repetition Penalty: 1.25):
+Generated autonomously by **Mochi-88M** (Seed: 42, Temperature: 0.65, Repetition Penalty: 1.25):
 
 > **Prompt:** *Write a short story about Shashank, a proud young mechanic working in a highway tin shed, and Rajesh Khanna, a wealthy businessman whose luxury car breaks down on the desert road.*
 >
@@ -126,10 +127,10 @@ Generated autonomously by **ModernGPT 88.1M** (Seed: 42, Temperature: 0.65, Repe
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-modern-gpt-88m/
+mochi-88m/
 ├── src/
 │   ├── model/
 │   │   ├── __init__.py
@@ -163,13 +164,13 @@ modern-gpt-88m/
 
 ---
 
-## Quickstart Guide
+## 🚀 Quickstart Guide
 
 ### 1. Installation
 Clone the repository and install the lightweight requirements:
 ```bash
-git clone https://github.com/your-username/modern-gpt-88m.git
-cd modern-gpt-88m
+git clone https://github.com/your-username/mochi-88m.git
+cd mochi-88m
 pip install -r requirements.txt
 ```
 
@@ -189,7 +190,7 @@ Expected output:
 ALL ARCHITECTURAL TESTS PASSED (100% OPERATIONAL)!
 ```
 
-### 3. Launch Desktop GUI (Story Studio)
+### 3. Launch Desktop GUI (Mochi Story Studio)
 Launch the graphical interface:
 ```bash
 python story_studio_gui.py
@@ -197,14 +198,14 @@ python story_studio_gui.py
 *(On Windows, you can also double-click `Launch_Story_Studio.bat`)*
 
 ### 4. CLI Inference
-Generate stories from the terminal:
+Generate stories directly from the terminal:
 ```bash
 python generate.py --prompt "Write a short story about an old clockmaker and an apprentice." --max_tokens 300 --temperature 0.65
 ```
 
 ---
 
-## Training Pipeline
+## 🔬 Training Pipeline
 
 ### Phase 1: Train SentencePiece BPE Tokenizer
 Trains a compact, high-efficiency 4,096-token vocabulary:
@@ -227,7 +228,7 @@ python src/training/finetune_sft.py
 
 ---
 
-## Key Engineering Takeaways
+## 💡 Key Engineering Takeaways
 
 1. **Prompt Loss Masking is Mandatory for SFT:**
    - Without masking prompt tokens (`targets[prompt] = -100`), small models spend substantial parameter capacity memorizing the prompt framing, causing infinite echo loops. Masking completely eliminated prompt repetition.
@@ -238,5 +239,5 @@ python src/training/finetune_sft.py
 
 ---
 
-## License
+## 📄 License
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.

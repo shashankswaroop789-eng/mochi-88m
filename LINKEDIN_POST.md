@@ -1,14 +1,14 @@
-# Ready-to-Post LinkedIn Announcement
+# Ready-to-Post LinkedIn Announcement: 🍡 Mochi-88M
 
-*Copy and paste the text below directly into LinkedIn. For maximum engagement, attach a 30-second screen recording (or screenshot) of the **Story Studio GUI** streaming text in real time!*
+*Copy and paste the text below directly into LinkedIn. For maximum engagement, attach a 15–30 second screen recording of the **Mochi Story Studio GUI** streaming words live at 57 tok/s!*
 
 ---
 
-🚀 **I built an 88.1M parameter LLM completely from scratch in PyTorch — trained on a single RTX 3060 laptop GPU.**
+🚀 **Introducing 🍡 Mochi-88M: A sweet, compact 88.1M parameter LLM built completely from scratch in PyTorch — trained on a single RTX 3060 laptop GPU.**
 
 No Hugging Face `transformers` modeling wrappers. No pre-packaged pipelines. Just raw PyTorch tensors, linear algebra, and CUDA kernels.
 
-Here is what went into the architecture, the hard engineering lessons learned along the way, and the results:
+Here is what went into the architecture, the hard engineering lessons learned along the way, and the benchmarks:
 
 ---
 
@@ -42,9 +42,9 @@ Building an LLM from scratch teaches you things you never learn from high-level 
 
 ---
 
-### 💻 Native Desktop GUI: "Story Studio"
+### 💻 Native Desktop GUI: "Mochi Story Studio"
 
-To make the model accessible without touching a CLI, I built **Story Studio**—a standalone dark-mode desktop application (Tkinter + PyTorch backend):
+To make the model accessible without touching a terminal, I built **Mochi Story Studio**—a standalone dark-mode desktop application (Tkinter + PyTorch backend):
 * ⚡ Zero-terminal 1-click startup
 * 📊 Real-time token streaming & telemetry (tok/s counter, word progress)
 * 📖 Multi-scene memory and chapter exporting
@@ -52,6 +52,7 @@ To make the model accessible without touching a CLI, I built **Story Studio**—
 ---
 
 ### 📊 Benchmark Numbers at a Glance:
+* **Model Name:** **Mochi-88M (🍡)**
 * **Parameters:** 88,141,824 (88.1M)
 * **Architecture:** 12 Layers | 12 Heads | 768 Dim | SwiGLU 2048 | RoPE | RMSNorm
 * **Inference Speed:** **56.9 tokens/sec** on NVIDIA RTX 3060 Laptop (6GB VRAM)
@@ -63,8 +64,8 @@ To make the model accessible without touching a CLI, I built **Story Studio**—
 📂 **The entire codebase is open-source on GitHub:**  
 👉 `[INSERT YOUR GITHUB REPOSITORY LINK HERE]`
 
-*(Includes architecture implementation, unit tests, pre-training scripts, SFT packers, and the Story Studio GUI).*
+*(Includes architecture implementation, unit tests, pre-training scripts, SFT packers, and the Mochi Story Studio GUI).*
 
 Would love to hear thoughts, feedback, and questions from fellow ML engineers and researchers!
 
-#MachineLearning #DeepLearning #PyTorch #LLM #GenerativeAI #ArtificialIntelligence #NLP #OpenSource #AI #SoftwareEngineering
+#MachineLearning #DeepLearning #PyTorch #LLM #GenerativeAI #ArtificialIntelligence #NLP #OpenSource #AI #SoftwareEngineering #Mochi88M

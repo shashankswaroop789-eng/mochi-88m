@@ -5,6 +5,11 @@ Verifies RoPE, RMSNorm, SwiGLU, and KV-Cache token generation.
 
 import sys
 import os
+
+# Enable UTF-8 encoding for Windows terminal
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 import torch
 import torch.nn.functional as F
 
@@ -71,7 +76,7 @@ def test_kv_cache_generation():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print(" Running ModernGPT Architectural Self-Verification Suite")
+    print(" Running 🍡 Mochi-88M Architectural Self-Verification Suite")
     print("=" * 60)
     test_rmsnorm()
     test_rope()
@@ -79,5 +84,5 @@ if __name__ == "__main__":
     test_model_forward()
     test_kv_cache_generation()
     print("=" * 60)
-    print(" ALL ARCHITECTURAL TESTS PASSED (100% OPERATIONAL)!")
+    print(" ALL 🍡 Mochi-88M ARCHITECTURAL TESTS PASSED (100% OPERATIONAL)!")
     print("=" * 60)

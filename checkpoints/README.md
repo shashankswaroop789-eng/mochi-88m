@@ -1,13 +1,13 @@
-# Model Checkpoints
+# 🍡 Mochi-88M Checkpoints
 
 This directory is used to store trained PyTorch model checkpoints (`.pt` files).
 Because model weights exceed GitHub's 100MB file limit, they are tracked via `.gitignore`.
 
 ## Available Weights
-1. **`hf_coherent_story_gpt88m.pt` (Recommended)**: 
+1. **`hf_coherent_story_gpt88m.pt` (Mochi-88M Recommended)**: 
    - 88.1M parameter model fine-tuned with prompt loss masking on focused narrative short stories.
    - Ideal for creative writing, zero word salad, high coherence.
-2. **`hf_master_gpt88m.pt`**:
+2. **`hf_master_gpt88m.pt` (Mochi-88M Foundation)**:
    - 88.1M parameter foundation model pre-trained on modern English narrative corpora (~30M tokens).
 
 ## Checkpoint Format

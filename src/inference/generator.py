@@ -1,10 +1,15 @@
 """
-ModernGPT 88.1M - CLI Story Generator
+🍡 Mochi-88M - CLI Story Generator
 Inference script featuring KV-Caching, Nucleus (top-p), Top-k, and Repetition Penalty.
 """
 
 import os
 import sys
+
+# Enable UTF-8 encoding for Windows terminal
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 import argparse
 import time
 import torch
@@ -17,7 +22,7 @@ if BASE_DIR not in sys.path:
 from modern_transformer import ModernGPT
 
 def main():
-    parser = argparse.ArgumentParser(description="ModernGPT 88.1M Inference Engine")
+    parser = argparse.ArgumentParser(description="🍡 Mochi-88M Inference Engine")
     parser.add_argument("--prompt", type=str, default=None, help="Input prompt text")
     parser.add_argument("--model", type=str, default="hf_coherent_story_gpt88m.pt", help="Checkpoint filename")
     parser.add_argument("--tokenizer", type=str, default="spm_hf_master.model", help="Tokenizer model file")
@@ -53,7 +58,7 @@ def main():
             sys.exit(1)
 
     print("=" * 80)
-    print(" ModernGPT 88.1M - High Performance Inference Engine")
+    print(" 🍡 Mochi-88M - High Performance Story Inference Engine")
     print(f" Checkpoint : {os.path.basename(model_path)}")
     print(f" Device     : {device.upper()} ({torch.cuda.get_device_name(0) if device == 'cuda' else 'CPU'})")
     print("=" * 80)

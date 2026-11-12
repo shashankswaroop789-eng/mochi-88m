@@ -1,6 +1,6 @@
-# Generated Story Samples - ModernGPT 88.1M
+# Generated Story Samples - 🍡 Mochi-88M
 
-The following stories were generated completely autonomously by **ModernGPT 88.1M** running on a consumer laptop (**NVIDIA GeForce RTX 3060 Laptop GPU**).
+The following stories were generated completely autonomously by **Mochi-88M** running on a consumer laptop (**NVIDIA GeForce RTX 3060 Laptop GPU**).
 
 ---
 

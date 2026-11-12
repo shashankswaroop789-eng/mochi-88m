@@ -20,6 +20,12 @@ try:
 except Exception:
     pass
 
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 # Script directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if BASE_DIR not in sys.path:
@@ -79,7 +85,7 @@ TEXT_MUTED = "#64748B"
 class StoryStudioGUI(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Story Studio - ModernGPT 88.1M Story Generator")
+        self.title("🍡 Mochi Story Studio - Mochi-88M Story Generator")
         self.geometry("1240x860")
         self.minsize(1020, 720)
         self.configure(bg=BG_DARK)
@@ -109,7 +115,7 @@ class StoryStudioGUI(tk.Tk):
 
         app_title = tk.Label(
             title_frame, 
-            text="✨ Story Studio", 
+            text="🍡 Mochi Story Studio", 
             font=("Segoe UI", 16, "bold"), 
             fg=TEXT_PRIMARY, 
             bg=BG_CARD
@@ -118,7 +124,7 @@ class StoryStudioGUI(tk.Tk):
 
         app_subtitle = tk.Label(
             title_frame, 
-            text=" | ModernGPT 88.1M Coherent Story Generator", 
+            text=" | Mochi-88M Coherent Story Engine", 
             font=("Segoe UI", 11), 
             fg=TEXT_SECONDARY, 
             bg=BG_CARD
@@ -497,7 +503,7 @@ class StoryStudioGUI(tk.Tk):
 
                 gpu_name = torch.cuda.get_device_name(0) if device == "cuda" else "CPU"
                 model_name = os.path.basename(load_path)
-                self.queue.put(("loaded", (f"Ready | ModernGPT 88.1M ({gpu_name})", gpu_name, model_name)))
+                self.queue.put(("loaded", (f"Ready | 🍡 Mochi-88M ({gpu_name})", gpu_name, model_name)))
 
             except Exception as e:
                 import traceback
@@ -618,7 +624,7 @@ class StoryStudioGUI(tk.Tk):
         self.btn_generate.config(state=tk.DISABLED)
         self.btn_stop.config(state=tk.NORMAL)
         self.next_ch_box.pack_forget()
-        self.lbl_status.config(text=f"Generating Scene {chapter_num} with ModernGPT 88.1M...")
+        self.lbl_status.config(text=f"Generating Scene {chapter_num} with 🍡 Mochi-88M...")
         
         # Display scene header in text box
         self.story_display.delete("1.0", tk.END)
