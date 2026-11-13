@@ -264,7 +264,8 @@ class ModernGPT(nn.Module):
         temperature: float = 0.65, 
         top_k: int = 40, 
         top_p: float = 0.88, 
-        repetition_penalty: float = 1.2,
+        repetition_penalty: float = 1.15,
+        prompt_len: int = None,
         banned_token_ids: list = None
     ):
         """
@@ -280,6 +281,8 @@ class ModernGPT(nn.Module):
         self.eval()
         kv_caches = None
         generated_tokens = idx.clone()
+        if prompt_len is None:
+            prompt_len = idx.shape[1]
 
         # Initial forward pass to fill KV-cache
         logits, _, kv_caches = self(idx, kv_caches=None)
@@ -288,9 +291,11 @@ class ModernGPT(nn.Module):
             # Take the prediction from the last time step
             next_token_logits = logits[:, -1, :].clone()
 
-            # 1. Vectorized Repetition Penalty on recent context window (prevents loops)
-            if repetition_penalty != 1.0 and generated_tokens.shape[1] > 1:
-                recent_window = generated_tokens[:, -128:]
+            # 1. Vectorized Repetition Penalty on newly generated tokens only (prevents loops without punishing prompt)
+            if repetition_penalty != 1.0 and generated_tokens.shape[1] > prompt_len:
+                # Only penalize newly generated tokens, NEVER penalize the user prompt words!
+                new_tokens = generated_tokens[:, prompt_len:]
+                recent_window = new_tokens[:, -128:]
                 penalized = next_token_logits.gather(1, recent_window)
                 penalized = torch.where(
                     penalized > 0,

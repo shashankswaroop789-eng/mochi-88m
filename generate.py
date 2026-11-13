@@ -30,7 +30,7 @@ def main():
     parser.add_argument("--temperature", type=float, default=0.70, help="Sampling temperature")
     parser.add_argument("--top_p", type=float, default=0.90, help="Nucleus sampling threshold")
     parser.add_argument("--top_k", type=int, default=40, help="Top-K sampling limit")
-    parser.add_argument("--repetition_penalty", type=float, default=1.18, help="Penalty against repetition loops")
+    parser.add_argument("--repetition_penalty", type=float, default=1.12, help="Penalty against repetition loops")
     parser.add_argument("--device", type=str, default=None, help="Compute device ('cuda' or 'cpu')")
     args = parser.parse_args()
 

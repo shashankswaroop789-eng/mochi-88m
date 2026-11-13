@@ -248,25 +248,25 @@ class StoryStudioGUI(tk.Tk):
 
         self.slider_temp = ttk.Scale(
             settings_card, 
-            from_=0.4, 
-            to=1.1, 
+            from_=0.3, 
+            to=1.05, 
             value=0.70, 
             command=lambda v: self.lbl_temp_val.config(text=f"{float(v):.2f}")
         )
         self.slider_temp.pack(fill=tk.X, pady=(0, 8))
 
-        # Repetition Penalty
+        # Repetition Penalty (Optimal range: 1.05 - 1.20)
         lbl_rep_row = tk.Frame(settings_card, bg=BG_CARD)
         lbl_rep_row.pack(fill=tk.X, pady=(2, 2))
         tk.Label(lbl_rep_row, text="Repetition Penalty:", font=("Segoe UI", 9), fg=TEXT_SECONDARY, bg=BG_CARD).pack(side=tk.LEFT)
-        self.lbl_rep_val = tk.Label(lbl_rep_row, text="1.18", font=("Segoe UI", 9, "bold"), fg=TEXT_PRIMARY, bg=BG_CARD)
+        self.lbl_rep_val = tk.Label(lbl_rep_row, text="1.12", font=("Segoe UI", 9, "bold"), fg=TEXT_PRIMARY, bg=BG_CARD)
         self.lbl_rep_val.pack(side=tk.RIGHT)
 
         self.slider_rep = ttk.Scale(
             settings_card, 
             from_=1.0, 
-            to=1.5, 
-            value=1.18, 
+            to=1.28, 
+            value=1.12, 
             command=lambda v: self.lbl_rep_val.config(text=f"{float(v):.2f}")
         )
         self.slider_rep.pack(fill=tk.X, pady=(0, 4))
@@ -664,6 +664,8 @@ class StoryStudioGUI(tk.Tk):
                     # Context window: keep last 384 tokens
                     context_ids = all_tokens[-384:]
                     idx = torch.tensor([context_ids], dtype=torch.long, device=self.device)
+                    # Calculate how many prompt tokens remain in current context window
+                    prompt_in_ctx = max(0, initial_len - (len(all_tokens) - len(context_ids)))
 
                     with torch.no_grad():
                         output_tokens = self.model.fast_generate(
@@ -672,7 +674,8 @@ class StoryStudioGUI(tk.Tk):
                             temperature=temperature,
                             top_k=40,
                             top_p=0.88,
-                            repetition_penalty=repetition_penalty
+                            repetition_penalty=repetition_penalty,
+                            prompt_len=prompt_in_ctx
                         )
 
                     new_ids = output_tokens[0].tolist()[len(context_ids):]
