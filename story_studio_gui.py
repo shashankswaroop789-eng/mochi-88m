@@ -31,8 +31,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-# Model paths - Primary: newly trained coherent story checkpoint
-MODEL_PATH = os.path.join(BASE_DIR, "hf_coherent_story_gpt88m.pt")
+# Model paths - Primary: newly trained 30,000-story master checkpoint
+MODEL_PATH = os.path.join(BASE_DIR, "hf_mochi88m_master.pt")
 FALLBACK_MODEL_PATH = os.path.join(BASE_DIR, "hf_master_gpt88m.pt")
 TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_hf_master.model")
 OUTPUT_DIR = os.path.join(BASE_DIR, "novel_output")
@@ -243,14 +243,14 @@ class StoryStudioGUI(tk.Tk):
         lbl_temp_row = tk.Frame(settings_card, bg=BG_CARD)
         lbl_temp_row.pack(fill=tk.X, pady=(2, 2))
         tk.Label(lbl_temp_row, text="Creativity (Temperature):", font=("Segoe UI", 9), fg=TEXT_SECONDARY, bg=BG_CARD).pack(side=tk.LEFT)
-        self.lbl_temp_val = tk.Label(lbl_temp_row, text="0.65", font=("Segoe UI", 9, "bold"), fg=TEXT_PRIMARY, bg=BG_CARD)
+        self.lbl_temp_val = tk.Label(lbl_temp_row, text="0.70", font=("Segoe UI", 9, "bold"), fg=TEXT_PRIMARY, bg=BG_CARD)
         self.lbl_temp_val.pack(side=tk.RIGHT)
 
         self.slider_temp = ttk.Scale(
             settings_card, 
             from_=0.4, 
             to=1.1, 
-            value=0.65, 
+            value=0.70, 
             command=lambda v: self.lbl_temp_val.config(text=f"{float(v):.2f}")
         )
         self.slider_temp.pack(fill=tk.X, pady=(0, 8))
@@ -259,14 +259,14 @@ class StoryStudioGUI(tk.Tk):
         lbl_rep_row = tk.Frame(settings_card, bg=BG_CARD)
         lbl_rep_row.pack(fill=tk.X, pady=(2, 2))
         tk.Label(lbl_rep_row, text="Repetition Penalty:", font=("Segoe UI", 9), fg=TEXT_SECONDARY, bg=BG_CARD).pack(side=tk.LEFT)
-        self.lbl_rep_val = tk.Label(lbl_rep_row, text="1.25", font=("Segoe UI", 9, "bold"), fg=TEXT_PRIMARY, bg=BG_CARD)
+        self.lbl_rep_val = tk.Label(lbl_rep_row, text="1.18", font=("Segoe UI", 9, "bold"), fg=TEXT_PRIMARY, bg=BG_CARD)
         self.lbl_rep_val.pack(side=tk.RIGHT)
 
         self.slider_rep = ttk.Scale(
             settings_card, 
             from_=1.0, 
             to=1.5, 
-            value=1.25, 
+            value=1.18, 
             command=lambda v: self.lbl_rep_val.config(text=f"{float(v):.2f}")
         )
         self.slider_rep.pack(fill=tk.X, pady=(0, 4))
