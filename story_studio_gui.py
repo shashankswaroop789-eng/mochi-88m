@@ -226,15 +226,15 @@ class StoryStudioGUI(tk.Tk):
         # Words Slider (Optimized for 88.1M short stories)
         lbl_words_row = tk.Frame(settings_card, bg=BG_CARD)
         lbl_words_row.pack(fill=tk.X, pady=(2, 2))
-        tk.Label(lbl_words_row, text="Target Words per Story:", font=("Segoe UI", 9), fg=TEXT_SECONDARY, bg=BG_CARD).pack(side=tk.LEFT)
-        self.lbl_words_val = tk.Label(lbl_words_row, text="300 words", font=("Segoe UI", 9, "bold"), fg=ACCENT_PRIMARY, bg=BG_CARD)
+        tk.Label(lbl_words_row, text="Target Words per Scene:", font=("Segoe UI", 9), fg=TEXT_SECONDARY, bg=BG_CARD).pack(side=tk.LEFT)
+        self.lbl_words_val = tk.Label(lbl_words_row, text="250 words", font=("Segoe UI", 9, "bold"), fg=ACCENT_PRIMARY, bg=BG_CARD)
         self.lbl_words_val.pack(side=tk.RIGHT)
 
         self.slider_words = ttk.Scale(
             settings_card, 
-            from_=150, 
-            to=800, 
-            value=300, 
+            from_=100, 
+            to=450, 
+            value=250, 
             command=lambda v: self.lbl_words_val.config(text=f"{int(float(v)):,} words")
         )
         self.slider_words.pack(fill=tk.X, pady=(0, 8))
@@ -675,12 +675,21 @@ class StoryStudioGUI(tk.Tk):
                             top_k=40,
                             top_p=0.88,
                             repetition_penalty=repetition_penalty,
-                            prompt_len=prompt_in_ctx
+                            prompt_len=prompt_in_ctx,
+                            no_repeat_ngram_size=4,
+                            stop_on_eos=True
                         )
 
                     new_ids = output_tokens[0].tolist()[len(context_ids):]
+                    if not new_ids:
+                        break
+
                     all_tokens.extend(new_ids)
                     total_tokens_generated += len(new_ids)
+
+                    # Stop naturally if EOS was generated
+                    if len(new_ids) < 20 or (new_ids and new_ids[-1] == 2):
+                        break
 
                     # Decode only generated story text (after initial prompt)
                     gen_story_tokens = all_tokens[initial_len:]

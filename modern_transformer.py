@@ -264,8 +264,10 @@ class ModernGPT(nn.Module):
         temperature: float = 0.65, 
         top_k: int = 40, 
         top_p: float = 0.88, 
-        repetition_penalty: float = 1.15,
+        repetition_penalty: float = 1.12,
         prompt_len: int = None,
+        no_repeat_ngram_size: int = 4,
+        stop_on_eos: bool = True,
         banned_token_ids: list = None
     ):
         """
@@ -273,10 +275,12 @@ class ModernGPT(nn.Module):
         Instead of recomputing past tokens, we cache K & V and only compute
         the single newest token at each step!
         Features:
+        - Strict N-Gram Blocking (prevents identical phrases/sentences from repeating)
         - Repetition penalty to prevent stuttering/repetition loops
         - Nucleus (top-p) + Top-K filtering for high coherence
         - Temperature scaling
         - Banned token suppression
+        - Clean EOS termination
         """
         self.eval()
         kv_caches = None
@@ -293,7 +297,6 @@ class ModernGPT(nn.Module):
 
             # 1. Vectorized Repetition Penalty on newly generated tokens only (prevents loops without punishing prompt)
             if repetition_penalty != 1.0 and generated_tokens.shape[1] > prompt_len:
-                # Only penalize newly generated tokens, NEVER penalize the user prompt words!
                 new_tokens = generated_tokens[:, prompt_len:]
                 recent_window = new_tokens[:, -128:]
                 penalized = next_token_logits.gather(1, recent_window)
@@ -304,20 +307,32 @@ class ModernGPT(nn.Module):
                 )
                 next_token_logits.scatter_(1, recent_window, penalized)
 
-            # 2. Temperature scaling
+            # 2. Strict N-Gram Blocking: mathematically guarantees no sentence or 4-word phrase can ever repeat!
+            if no_repeat_ngram_size > 0 and generated_tokens.shape[1] >= prompt_len + no_repeat_ngram_size:
+                gen_ids = generated_tokens[0, prompt_len:].tolist()
+                n = no_repeat_ngram_size
+                prefix = tuple(gen_ids[-(n-1):])
+                banned_ngram_tokens = []
+                for i in range(len(gen_ids) - n + 1):
+                    if tuple(gen_ids[i:i+n-1]) == prefix:
+                        banned_ngram_tokens.append(gen_ids[i+n-1])
+                if banned_ngram_tokens:
+                    next_token_logits[0, banned_ngram_tokens] = -float("Inf")
+
+            # 3. Temperature scaling
             if temperature > 0:
                 next_token_logits = next_token_logits / temperature
 
-            # 3. Banned tokens
+            # 4. Banned tokens
             if banned_token_ids:
                 next_token_logits[:, banned_token_ids] = -float("Inf")
 
-            # 4. Top-K filtering
+            # 5. Top-K filtering
             if top_k is not None and top_k > 0:
                 v, _ = torch.topk(next_token_logits, min(top_k, next_token_logits.size(-1)))
                 next_token_logits[next_token_logits < v[:, [-1]]] = -float("Inf")
 
-            # 5. Top-P (Nucleus) filtering
+            # 6. Top-P (Nucleus) filtering
             if top_p is not None and top_p < 1.0:
                 sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
                 cumulative_probs = torch.cumsum(F.softmax(sorted_logits, dim=-1), dim=-1)
@@ -330,6 +345,10 @@ class ModernGPT(nn.Module):
 
             probs = F.softmax(next_token_logits, dim=-1)
             next_token = torch.multinomial(probs, num_samples=1)
+
+            # Stop cleanly if model outputs EOS (end of story)
+            if stop_on_eos and next_token.item() == 2:
+                break
 
             generated_tokens = torch.cat([generated_tokens, next_token], dim=-1)
 
