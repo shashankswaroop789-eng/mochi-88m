@@ -15,6 +15,7 @@ __pycache__/
 # Large Datasets and Raw Corpora
 *.parquet
 *.arrow
+data/fineweb_edu/
 tinystories*.txt
 pure_modern_english_corpus.txt
 master_story_corpus.txt
@@ -22,6 +23,10 @@ scrubbed_clean_romance_corpus.txt
 rajput_dynasty_corpus.txt
 *.jsonl
 !data/samples/*.jsonl
+data/*.json
+*.json
+!benchmark_20_stories_results.json
+!config_300m.json
 
 # Generated Novel and Story Outputs
 novel_output/

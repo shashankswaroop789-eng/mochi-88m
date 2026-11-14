@@ -22,10 +22,10 @@ if BASE_DIR not in sys.path:
 from modern_transformer import ModernGPT
 
 def main():
-    parser = argparse.ArgumentParser(description="🍡 Mochi-88M Inference Engine")
+    parser = argparse.ArgumentParser(description="🍡 Mochi-Novel-300M Inference Engine")
     parser.add_argument("--prompt", type=str, default=None, help="Input prompt text")
-    parser.add_argument("--model", type=str, default="hf_mochi88m_master.pt", help="Checkpoint filename")
-    parser.add_argument("--tokenizer", type=str, default="spm_hf_master.model", help="Tokenizer model file")
+    parser.add_argument("--model", type=str, default="mochi_novel_300m.pt", help="Checkpoint filename")
+    parser.add_argument("--tokenizer", type=str, default="spm_novel_16k.model", help="Tokenizer model file")
     parser.add_argument("--max_tokens", type=int, default=350, help="Maximum new tokens to generate")
     parser.add_argument("--temperature", type=float, default=0.70, help="Sampling temperature")
     parser.add_argument("--top_p", type=float, default=0.90, help="Nucleus sampling threshold")
@@ -49,7 +49,7 @@ def main():
         subprocess.run([sys.executable, os.path.join(BASE_DIR, "download_model.py")], check=True)
 
     print("=" * 80)
-    print(" 🍡 Mochi-88M - High Performance Story Inference Engine")
+    print(" 🍡 Mochi-Novel-300M - High Performance Story Inference Engine")
     print(f" Checkpoint : {os.path.basename(model_path)}")
     print(f" Device     : {device.upper()} ({torch.cuda.get_device_name(0) if device == 'cuda' else 'CPU'})")
     print("=" * 80)

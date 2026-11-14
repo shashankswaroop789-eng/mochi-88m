@@ -31,18 +31,48 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-# Model paths - Primary: newly trained 30,000-story master checkpoint
-MODEL_PATH = os.path.join(BASE_DIR, "hf_mochi88m_master.pt")
-FALLBACK_MODEL_PATH = os.path.join(BASE_DIR, "hf_master_gpt88m.pt")
-TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_hf_master.model")
+# Model paths
+UNIVERSAL_MODEL_PATH = os.path.join(BASE_DIR, "mochi_novel_300m.pt")
+GOLDEN_RAJPUT_MODEL_PATH = os.path.join(BASE_DIR, "mochi_novel_300m_golden_rajput.pt")
+PRIMARY_TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_novel_16k.model")
+FALLBACK_MODEL_PATH = os.path.join(BASE_DIR, "hf_mochi88m_master.pt")
+FALLBACK_TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_hf_master.model")
+
+if os.path.exists(UNIVERSAL_MODEL_PATH) and os.path.exists(PRIMARY_TOKENIZER_PATH):
+    MODEL_PATH = UNIVERSAL_MODEL_PATH
+    TOKENIZER_PATH = PRIMARY_TOKENIZER_PATH
+else:
+    MODEL_PATH = FALLBACK_MODEL_PATH
+    TOKENIZER_PATH = FALLBACK_TOKENIZER_PATH
+
 OUTPUT_DIR = os.path.join(BASE_DIR, "novel_output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Coherent Short Story Presets (High Coherence on 88.1M Architecture)
+# Coherent Novel Presets (Universal Multi-Genre & Golden Saga)
 PRESETS = {
+    "🚀 Sci-Fi: Orion Station": (
+        "Commander Vance stood at the observation deck of the orbital station Orion, gazing down at the rings of Saturn. "
+        "An unexplained quantum anomaly in the main reactor core had just triggered the silent emergency klaxons."
+    ),
+    "🔍 Victorian: Blackwood": (
+        "Rain lashed against the leaded windows of Blackwood Manor as Inspector Sterling arrived in the carriage, "
+        "summoned to investigate the locked-room murder of the wealthy lord."
+    ),
+    "⚡ Cyberpunk: Neo-Tokyo": (
+        "Kael, a neural runner with black optic implants, and Maya, a cybernetic infiltrator, crouched on the rain-slicked "
+        "gantry overlooking the Arasaka sub-level data vault in Neo-Shinjuku."
+    ),
+    "⚔️ Fantasy: Silver Citadel": (
+        "Lady Elana stood atop the high battlements of the Silver Citadel, clutching her ancestral rune blade as "
+        "the shadow dragon circled the darkening mountain pass."
+    ),
     "🚗 Shashank & Rajesh": (
         "Write a short story about Shashank, a proud young mechanic working in a highway tin shed, "
         "and Rajesh Khanna, a wealthy businessman whose luxury car breaks down on the desert road."
+    ),
+    "🏎️ Shashank & Samira": (
+        "Write a short story about Shashank, a proud young mechanic working in a highway tin shed, "
+        "and Samira Khanna a daughter of wealthy businessman whose luxury car breaks down on the desert road."
     ),
     "👑 Savita & Karthik": (
         "Write a short story about Savita Rajput, the proud family matriarch, confronting her grandson Karthik "
@@ -52,10 +82,6 @@ PRESETS = {
         "Write a short story about Avinash Rajput quietly visiting his estranged son Shashank at his dusty "
         "roadside workshop after years of bitter silence."
     ),
-    "💎 Samira's Pride": (
-        "Write a short story about Samira Khanna refusing to enter an arranged dynastic marriage for corporate power, "
-        "vowing to make her own destiny."
-    ),
     "📜 Full Rajput Dynasty": (
         "Write a story of the Rajput family. Savita Rajput gathers her family inside Rajput Sadan to announce "
         "the golden alliance with the Khanna Empire, while thirty miles away on the highway bypass, her outcast "
@@ -63,7 +89,7 @@ PRESETS = {
     )
 }
 
-DEFAULT_PROMPT = PRESETS["🚗 Shashank & Rajesh"]
+DEFAULT_PROMPT = PRESETS["🚀 Sci-Fi: Orion Station"]
 
 # --- THEME COLORS ---
 BG_DARK = "#12131C"
@@ -85,7 +111,7 @@ TEXT_MUTED = "#64748B"
 class StoryStudioGUI(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("🍡 Mochi Story Studio - Mochi-88M Story Generator")
+        self.title("🍡 Mochi Story Studio - Mochi-Novel-300M Long-Context Story Engine")
         self.geometry("1240x860")
         self.minsize(1020, 720)
         self.configure(bg=BG_DARK)
@@ -124,7 +150,7 @@ class StoryStudioGUI(tk.Tk):
 
         app_subtitle = tk.Label(
             title_frame, 
-            text=" | Mochi-88M Coherent Story Engine", 
+            text=" | Mochi-Novel-300M Long-Context Story Engine", 
             font=("Segoe UI", 11), 
             fg=TEXT_SECONDARY, 
             bg=BG_CARD
@@ -142,6 +168,33 @@ class StoryStudioGUI(tk.Tk):
             pady=4
         )
         self.status_badge.pack(side=tk.RIGHT)
+
+        # Engine Selector Combobox
+        engine_frame = tk.Frame(header, bg=BG_CARD)
+        engine_frame.pack(side=tk.RIGHT, padx=(0, 16))
+
+        tk.Label(
+            engine_frame,
+            text="Story Engine:",
+            font=("Segoe UI", 9, "bold"),
+            fg=TEXT_SECONDARY,
+            bg=BG_CARD
+        ).pack(side=tk.LEFT, padx=(0, 6))
+
+        self.engine_var = tk.StringVar(value="🌌 Universal Multi-Genre (300M)")
+        self.engine_dropdown = ttk.Combobox(
+            engine_frame,
+            textvariable=self.engine_var,
+            values=[
+                "🌌 Universal Multi-Genre (300M)",
+                "🏛️ Rajput Sadan Saga (300M Golden)"
+            ],
+            state="readonly",
+            width=28,
+            font=("Segoe UI", 9)
+        )
+        self.engine_dropdown.pack(side=tk.LEFT)
+        self.engine_dropdown.bind("<<ComboboxSelected>>", self._on_engine_selected)
 
         # 2. Main Content Split View (Left = Controls & Setup, Right = Live Viewer & Chat Loop)
         main_pane = tk.PanedWindow(self, orient=tk.HORIZONTAL, bg=BG_DARK, sashwidth=4, sashrelief="flat")
@@ -163,21 +216,23 @@ class StoryStudioGUI(tk.Tk):
             bg=BG_SIDEBAR
         ).pack(side=tk.LEFT)
 
-        # Preset Buttons Row
-        preset_bar = tk.Frame(left_frame, bg=BG_SIDEBAR)
-        preset_bar.pack(fill=tk.X, pady=(0, 8))
+        # Preset Buttons Row 1 (Universal Genres)
+        preset_bar1 = tk.Frame(left_frame, bg=BG_SIDEBAR)
+        preset_bar1.pack(fill=tk.X, pady=(0, 4))
 
         tk.Label(
-            preset_bar, 
-            text="Presets:", 
-            font=("Segoe UI", 9, "bold"), 
-            fg=TEXT_MUTED, 
-            bg=BG_SIDEBAR
-        ).pack(side=tk.LEFT, padx=(0, 4))
+            preset_bar1, 
+            text="Universal:", 
+            font=("Segoe UI", 8, "bold"), 
+            fg="#818CF8", 
+            bg=BG_SIDEBAR,
+            width=8,
+            anchor="w"
+        ).pack(side=tk.LEFT)
 
-        for name in ["🚗 Shashank & Rajesh", "👑 Savita & Karthik", "🤝 Avinash & Shashank", "💎 Samira's Pride"]:
+        for name in ["🚀 Sci-Fi: Orion Station", "🔍 Victorian: Blackwood", "⚡ Cyberpunk: Neo-Tokyo", "⚔️ Fantasy: Silver Citadel"]:
             btn = tk.Button(
-                preset_bar,
+                preset_bar1,
                 text=name,
                 font=("Segoe UI", 8),
                 fg=TEXT_PRIMARY,
@@ -185,7 +240,38 @@ class StoryStudioGUI(tk.Tk):
                 activebackground="#373B5B",
                 activeforeground="#A5B4FC",
                 relief="flat",
-                padx=6,
+                padx=5,
+                pady=2,
+                cursor="hand2",
+                command=lambda p=name: self._load_preset(p)
+            )
+            btn.pack(side=tk.LEFT, padx=2)
+
+        # Preset Buttons Row 2 (Golden Rajput Saga)
+        preset_bar2 = tk.Frame(left_frame, bg=BG_SIDEBAR)
+        preset_bar2.pack(fill=tk.X, pady=(0, 8))
+
+        tk.Label(
+            preset_bar2, 
+            text="Rajput:", 
+            font=("Segoe UI", 8, "bold"), 
+            fg="#F59E0B", 
+            bg=BG_SIDEBAR,
+            width=8,
+            anchor="w"
+        ).pack(side=tk.LEFT)
+
+        for name in ["🚗 Shashank & Rajesh", "🏎️ Shashank & Samira", "👑 Savita & Karthik", "🤝 Avinash & Shashank"]:
+            btn = tk.Button(
+                preset_bar2,
+                text=name,
+                font=("Segoe UI", 8),
+                fg=TEXT_PRIMARY,
+                bg="#25273C",
+                activebackground="#373B5B",
+                activeforeground="#FDE68A",
+                relief="flat",
+                padx=5,
                 pady=2,
                 cursor="hand2",
                 command=lambda p=name: self._load_preset(p)
@@ -223,18 +309,18 @@ class StoryStudioGUI(tk.Tk):
         )
         settings_card.pack(fill=tk.X, pady=(0, 14))
 
-        # Words Slider (Optimized for 88.1M short stories)
+        # Words Slider (Optimized for 300M Long-Context Storytelling)
         lbl_words_row = tk.Frame(settings_card, bg=BG_CARD)
         lbl_words_row.pack(fill=tk.X, pady=(2, 2))
         tk.Label(lbl_words_row, text="Target Words per Scene:", font=("Segoe UI", 9), fg=TEXT_SECONDARY, bg=BG_CARD).pack(side=tk.LEFT)
-        self.lbl_words_val = tk.Label(lbl_words_row, text="250 words", font=("Segoe UI", 9, "bold"), fg=ACCENT_PRIMARY, bg=BG_CARD)
+        self.lbl_words_val = tk.Label(lbl_words_row, text="350 words", font=("Segoe UI", 9, "bold"), fg=ACCENT_PRIMARY, bg=BG_CARD)
         self.lbl_words_val.pack(side=tk.RIGHT)
 
         self.slider_words = ttk.Scale(
             settings_card, 
-            from_=100, 
-            to=450, 
-            value=250, 
+            from_=200, 
+            to=1000, 
+            value=600, 
             command=lambda v: self.lbl_words_val.config(text=f"{int(float(v)):,} words")
         )
         self.slider_words.pack(fill=tk.X, pady=(0, 8))
@@ -509,7 +595,7 @@ class StoryStudioGUI(tk.Tk):
 
                 gpu_name = torch.cuda.get_device_name(0) if device == "cuda" else "CPU"
                 model_name = os.path.basename(load_path)
-                self.queue.put(("loaded", (f"Ready | 🍡 Mochi-88M ({gpu_name})", gpu_name, model_name)))
+                self.queue.put(("loaded", (f"Ready | 🍡 Mochi-Novel-300M ({gpu_name})", gpu_name, model_name)))
 
             except Exception as e:
                 import traceback
@@ -556,12 +642,35 @@ class StoryStudioGUI(tk.Tk):
         self.after(40, check)
 
     # --- USER ACTIONS ---
+    def _on_engine_selected(self, event=None):
+        choice = self.engine_var.get()
+        target_path = GOLDEN_RAJPUT_MODEL_PATH if "Rajput" in choice else UNIVERSAL_MODEL_PATH
+        if self.model is not None and hasattr(self, "device") and os.path.exists(target_path):
+            try:
+                import torch
+                ckpt = torch.load(target_path, map_location=self.device, weights_only=False)
+                state_dict = ckpt["model_state_dict"] if "model_state_dict" in ckpt else ckpt
+                self.model.load_state_dict(state_dict)
+                self.model.eval()
+                is_rajput = "Rajput" in choice
+                name = "Rajput Sadan Golden" if is_rajput else "Universal Multi-Genre"
+                self.lbl_status.config(text=f"Active Story Engine: {name}")
+            except Exception as e:
+                self.lbl_status.config(text=f"Engine switch error: {e}")
+
     def _load_preset(self, preset_name):
         if preset_name in PRESETS:
             self.prompt_text.delete("1.0", tk.END)
             self.prompt_text.insert("1.0", PRESETS[preset_name])
-            self.slider_words.set(300)
-            self.lbl_words_val.config(text="300 words")
+            self.slider_words.set(800)
+            self.lbl_words_val.config(text="800 words")
+
+            # Auto-route to the appropriate story engine
+            if any(k in preset_name for k in ["Shashank", "Savita", "Rajput", "Avinash"]):
+                self.engine_var.set("🏛️ Rajput Sadan Saga (300M Golden)")
+            else:
+                self.engine_var.set("🌌 Universal Multi-Genre (300M)")
+            self._on_engine_selected()
 
     def _on_click_start_story(self):
         prompt = self.prompt_text.get("1.0", tk.END).strip()
@@ -576,6 +685,22 @@ class StoryStudioGUI(tk.Tk):
         formatted_prompt = f"### Prompt:\n{prompt}\n\n### Story:\n"
         self._start_generation_worker(formatted_prompt, chapter_num=1)
 
+    def _get_clean_previous_tail(self, max_chars=350):
+        prev_text = self.chapters_data.get(self.current_chapter, "").strip()
+        if not prev_text:
+            return ""
+        if len(prev_text) > max_chars:
+            tail = prev_text[-max_chars:].strip()
+            if "\n\n" in tail:
+                candidate = tail.split("\n\n")[-1].strip()
+                if len(candidate) >= 80:
+                    return candidate
+            sp = tail.find(' ')
+            if sp != -1 and sp < 30:
+                return tail[sp+1:].strip()
+            return tail
+        return prev_text
+
     def _on_click_next_chapter_custom(self):
         instruction = self.txt_next_instruction.get().strip()
         if not instruction:
@@ -583,7 +708,7 @@ class StoryStudioGUI(tk.Tk):
             return
         
         next_ch = self.current_chapter + 1
-        prev_tail = self.chapters_data.get(self.current_chapter, "")[-350:]
+        prev_tail = self._get_clean_previous_tail()
         
         formatted_prompt = (
             f"### Prompt:\n"
@@ -595,7 +720,7 @@ class StoryStudioGUI(tk.Tk):
 
     def _on_click_next_chapter_auto(self):
         next_ch = self.current_chapter + 1
-        prev_tail = self.chapters_data.get(self.current_chapter, "")[-350:]
+        prev_tail = self._get_clean_previous_tail()
         formatted_prompt = (
             f"### Prompt:\n"
             f"Continue the story naturally from this scene:\n{prev_tail}\n\n"
@@ -614,7 +739,7 @@ class StoryStudioGUI(tk.Tk):
         if self.model is None or self.sp is None:
             messagebox.showwarning(
                 "Model Still Loading", 
-                "The 88.1M model is still loading into GPU memory. Please wait until the badge shows '● Ready'."
+                "The Mochi-Novel-300M model is still loading into GPU memory. Please wait until the badge shows '● Ready'."
             )
             return
 
@@ -630,7 +755,7 @@ class StoryStudioGUI(tk.Tk):
         self.btn_generate.config(state=tk.DISABLED)
         self.btn_stop.config(state=tk.NORMAL)
         self.next_ch_box.pack_forget()
-        self.lbl_status.config(text=f"Generating Scene {chapter_num} with 🍡 Mochi-88M...")
+        self.lbl_status.config(text=f"Generating Scene {chapter_num} with 🍡 Mochi-Novel-300M...")
         
         # Display scene header in text box
         self.story_display.delete("1.0", tk.END)
@@ -645,10 +770,9 @@ class StoryStudioGUI(tk.Tk):
                 if not token_ids:
                     token_ids = [0]
 
-                # Intelligent prompt compression if prompt is too long for 512 context
-                # Keep prompt within 280 tokens so the model has ample context for creative generation
-                if len(token_ids) > 280:
-                    token_ids = token_ids[:40] + token_ids[-240:]
+                # Context window: keep prompt within 1024 tokens
+                if len(token_ids) > 1024:
+                    token_ids = token_ids[:80] + token_ids[-944:]
 
                 all_tokens = list(token_ids)
                 initial_len = len(all_tokens)
@@ -661,40 +785,60 @@ class StoryStudioGUI(tk.Tk):
                     if self.stop_requested:
                         break
 
-                    # Context window: keep last 384 tokens
-                    context_ids = all_tokens[-384:]
+                    # Long-Context window: keep up to 1,536 tokens
+                    context_ids = all_tokens[-1536:]
                     idx = torch.tensor([context_ids], dtype=torch.long, device=self.device)
                     # Calculate how many prompt tokens remain in current context window
                     prompt_in_ctx = max(0, initial_len - (len(all_tokens) - len(context_ids)))
 
+                    # Check current word count so far
+                    gen_story_tokens = all_tokens[initial_len:]
+                    current_text = self.sp.decode(gen_story_tokens)
+                    current_words = len(current_text.split())
+
+                    # Allow natural story ending once the narrative has developed (>= 450 words or 70% of target)
+                    allow_eos = (current_words >= min(450, int(target_words * 0.70)))
+                    banned_tokens = [] if allow_eos else [2]
+
+                    is_rajput = "Rajput" in self.engine_var.get()
+                    ngram_val = 0 if is_rajput else 4
+                    rep_pen = repetition_penalty if is_rajput else max(repetition_penalty, 1.15)
+
                     with torch.no_grad():
                         output_tokens = self.model.fast_generate(
                             idx,
-                            max_new_tokens=20,
+                            max_new_tokens=25,
                             temperature=temperature,
                             top_k=40,
                             top_p=0.88,
-                            repetition_penalty=repetition_penalty,
+                            repetition_penalty=rep_pen,
                             prompt_len=prompt_in_ctx,
-                            no_repeat_ngram_size=4,
-                            stop_on_eos=True
+                            no_repeat_ngram_size=ngram_val,
+                            stop_on_eos=allow_eos,
+                            banned_token_ids=banned_tokens
                         )
 
                     new_ids = output_tokens[0].tolist()[len(context_ids):]
                     if not new_ids:
                         break
 
+                    # Check if EOS (2) was emitted
+                    eos_hit = (2 in new_ids)
+                    if eos_hit:
+                        eos_pos = new_ids.index(2)
+                        new_ids = new_ids[:eos_pos]
+
                     all_tokens.extend(new_ids)
                     total_tokens_generated += len(new_ids)
-
-                    # Stop naturally if EOS was generated
-                    if len(new_ids) < 20 or (new_ids and new_ids[-1] == 2):
-                        break
 
                     # Decode only generated story text (after initial prompt)
                     gen_story_tokens = all_tokens[initial_len:]
                     current_text = self.sp.decode(gen_story_tokens)
                     current_words = len(current_text.split())
+
+                    # Check for prompt boundary leak (###)
+                    if "###" in current_text and current_words > 200:
+                        break
 
                     # Stream delta text to UI
                     new_chunk = current_text[last_text_len:]
@@ -705,11 +849,16 @@ class StoryStudioGUI(tk.Tk):
 
                     self.queue.put(("stream", (new_chunk, current_words, target_words, speed)))
 
+                    if eos_hit and allow_eos:
+                        break
+
                     if current_words >= target_words:
                         break
 
                 # Finish up and trim cleanly to sentence boundary
                 full_gen_text = self.sp.decode(all_tokens[initial_len:])
+                if "###" in full_gen_text:
+                    full_gen_text = full_gen_text.split("###")[0].strip()
                 full_gen_text = re.sub(r'\n{3,}', '\n\n', full_gen_text)
                 
                 # Sentence end trim

@@ -1,0 +1,480 @@
+{
+  "summary": {
+    "total_stories": 20,
+    "total_scenes": 40,
+    "total_words": 7435,
+    "average_score": 4.4,
+    "leak_free_percentage": 90.0,
+    "repetition_clean_percentage": 95.0,
+    "elapsed_seconds": 247.1
+  },
+  "stories": [
+    {
+      "id": 1,
+      "genre": "Hard Science Fiction",
+      "title": "Signal from Trappist",
+      "premise": "Dr. Alistair Thorne, an astrophysicist on a lunar observatory, intercepts an encrypted signal originating from the Trappist-1 system.",
+      "instruction": "Alistair and technician Nadia decrypt the first layer of the signal and discover it contains biological DNA coordinates.",
+      "scene1_text": "Dr. Alistay had never seen a human before the station, nor was he in any way capable of a human being. His own life and his kind had been transformed, their lives and their days. But the next step is only to take what may not be necessary for the final project: - The replacement chamber with a precision that would have been almost node of an object - The operating room was in a large building, an insistent wall covered with a reservoir that seemed completely out of place in a dark alley. The viewport was built on an infinite surface, and the building's main wall was made up of a single one-width structure - either built or built, with a width of a mile-inched stone, a roofed wall, and a floor that had been placed between the two-fingered walls. The other end of the structure was a single, rusted floor, each wall antennas high, and the window to the left was open to the viewport. Dr. Alizay had long been a member of the designer's team. \"It is the first step,\" he said in a low voice.",
+      "scene2_text": "In the experimental area, the team began to talk task-benefits, and time passed. \"You can't stop me!\" Alistair declared, his voice shaking with emotion. \"I am here to help you.\" The team took their leave of minutes, then hours, until they were seated in a small doorway that seemed completely out of place in a dark alley. They could see the image in the mirror - a figure standing at an angle, a shape not well known to be. \"I have a feeling,\" Alistair said. \"Antimatter, what is it?\" \"Yes,\" Alistay replied. \"It will be over. I've come to be this corner of my world. But there is something I can do to keep me going.\" The team stared at each other, wondering if the one they had seen was true. \"You're here now,\" Alistrich said. \"And what you did to me is to stay.\" The group stood in silence for a moment. Then slowly, they turned to see their friend and his wife. \"Greetings, baby girl. My family has been waiting for you.\" They walked out into the room, ready to face the next day.",
+      "evaluation": {
+        "score": 2.5,
+        "judgment": "Poor",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": false,
+        "dup_4grams": 7,
+        "s1_words": 189,
+        "s2_words": 186,
+        "total_words": 375
+      }
+    },
+    {
+      "id": 2,
+      "genre": "Cyberpunk Noir",
+      "title": "Neon Biocrypt",
+      "premise": "Ren, a cybernetic black-market surgeon in the neon underbelly of Sector 9, is brought an injured courier clutching a biocrypted flash drive.",
+      "instruction": "Ren removes a burning tracker from the courier's mechanical arm just as corporate security drones breach the clinic doors.",
+      "scene1_text": "The last thing I knew was the night before my wife and I had been dead for days, never really gone to sleep. She had never been alone in that black hole, never had a single bone found in her own body. Weakness, dizziness, and hunger together. But she had grown up with it - a woman named Mina — an unsettlingly beautiful woman who had died at this early age. Her mother had been dead yet, and she had begun to notice it as a full-fledged of Sector 11, and had been killed in the lab. She'd had been dead and dead for. The woman had always been a part of her life, but there were still people living with Sector 1 and these same males. They knew each other too. Sector 3 was one of the few that would have gone before their first human. And one of the first to enter the normal cycle was a scampering, straining parasite. They had left the bacteria they had found inside the bladder, and now they would find their way back to their new existence. The bacteria came in contact with the bacterium and then spread them on the bacterial surface.",
+      "scene2_text": "The bacteria would have gone to the borrower, but the bacteria were no more than humanoid. Their bodies had been drawn back into the air, but only a small fractured hole. The bacteri gathered at the boron, and the borre-pulse was a long, deadly blow, the borrops's most important form of bombed. It was a stunning, wilder, bifurcated mass of bacteria that had never met the borron's eyes. As the borral clamps gave way to the borserre, it seemed a bit like an early on of the borring. But the borra's teeth were so strong, they did not dissolve. \"I... I don't know how to deal with these borrhea,\" the borrosan said, his voice quiet, low and unvarnished. \"But I'm afraid you'll understand.\" And so began a new era for borrhoea, its borrwegian roots, and a new age of borrhubic infections.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 201,
+        "s2_words": 141,
+        "total_words": 342
+      }
+    },
+    {
+      "id": 3,
+      "genre": "Victorian Gothic Mystery",
+      "title": "The Mirrors of Thorncliff",
+      "premise": "Miss Genevieve Vance arrives at Thorncliff Priory as a governess, only to find the young master locked in the attic and whispering to empty mirrors.",
+      "instruction": "Genevieve sneaks into the forbidden east wing at midnight and finds a leather-bound diary documenting a century-old family curse.",
+      "scene1_text": "The twilight sky over the Thar desert bled from amber into deep violet. The old lady had been a real friend, and she was a bit of a little pauper. \"Holy shit!\" she murmured through gritted teeth as she leaned her head against the barium. Flickering, cold wind began to tear down the shimmering marble that had stood for three centuries. \"You're...I have a lot.\" Thorncliff looked up at her with a strange smile. She knew had been wearing these clothes before the night was evenly blue. A dark, red-faced man in a white suit walked on the edge of the wood. He was twenty-two and very young, with white hair and sharp hair and an embroidered linen face. His brown eyes were dark and firm. \"What a wonderful little lady! Why did you want me?\" she whispered to him. \"You were always good at keeping me,\" he said softly. \"I'm very glad I could put you in this heat.\" Dot's voice caught his eye. \"Ah, but I'm just a pretty girl who doesn't look so like her,\" she stammered out a laugh. \"You could have been a good woman, too!",
+      "scene2_text": "Chapter XXVII Dot's lips grinned and turned to face the town-fire. \"I guess I wouldn't like that,\" she said with a smile. \"It will be fun for you, too.\" And so Dot set off into the desert, where the old man was standing, he gathered his tools and began to spread them. A long time later, he had learned to think of their day-long work and the new world they were going to get. But when he got to his house in Mumbai at a restaurant in Mumbien, Dot'ti knew of that moment - there were no things that might help him to do something else. He knew all the money he had been used for the night before, and he would have made it through the night, by chance or by the time he came home again. Dot stood upon the edge of the forest, looking out over the ocean, as if to see a family friend come out of the water. He was not quite sure what was being said. He sat down beside the back wall, a sound that seemed to come from within. The people looked at him with those eyes that could never be seen in their faces. \"What is your name?\" asked Dot,ti.",
+      "evaluation": {
+        "score": 5.0,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [
+          "Thorncliff"
+        ],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 1,
+        "s1_words": 191,
+        "s2_words": 209,
+        "total_words": 400
+      }
+    },
+    {
+      "id": 4,
+      "genre": "Epic High Fantasy",
+      "title": "The Last Sun-Guard",
+      "premise": "Captain Kaelen of the Sun-Guard holds the bridge of Oakhaven against the army of the Pale King as snow falls over the caldera.",
+      "instruction": "Kaelen unleashes the dormant flame of his ancestor's sword to buy time for the villagers to retreat into the catacombs.",
+      "scene1_text": "\"Salatin-a-wait-snake-all-eaten-a-pee!\" he shouted. \"Papi-ji, you don't see her! She is a Pale King!\" The king laughed in shock as the sun rose over the army of the Pale King. \"That was so hot, Captain Kurta! I'm not sure it'll come too late!\" He paused for a moment before turning back to his former captain. \"It's going to be the Pale Man. I've got a chance to get off your feet and start to look after me in the face of the Pile King.\" \"Aw, I know you're here,\" Kurta said with a smile. \"And I'm going to take some water from Mandate.\" Kurta nodded. \"You're going to leave this way, Captain Kigta. It's a long day, but I can tell you what happened.\" The king shook his head. \"It is too late for that thing. I was looking at the enemy on the Pale Queen for a moment. But this is my place.\" He paused. \"I'll be watching you.",
+      "scene2_text": "The Pale Queen blinked and leaned forward, his eyes widening. \"Apologies!\" he cried. \"You're right, Captain Kigta! You will keep this place asunder by the laws of the Pale Queen. And you will make a deal.\" Kigta looked at him, tears streaming down his face. He knew he would be ready for it. But there was no return. The Lord Kigta stood tall and silent, the priest's sword gleaming in his hand. \"Thank you,\" he said. \"But let's not rest until we reach the city of Kigta.\" Kigmo nodded slowly, a look of horror and understanding hovering before him. \"Such a day, Kigta!\" he cried, a smile spreading across his face. \"I must say, my lord, I have been watching over you all the time. I must say, that I am going to be a hero to you. You are a safe place, Kigran.\" \"Well, I suppose you would like to stay,\" Kigta declared, voice echoing through the chamber. Kigta hesitated, a sound like something from a knife in his hand, as if to ask the truth of it.",
+      "evaluation": {
+        "score": 5.1,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [
+          "sword"
+        ],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 159,
+        "s2_words": 179,
+        "total_words": 338
+      }
+    },
+    {
+      "id": 5,
+      "genre": "Espionage Thriller",
+      "title": "The Zurich Handshake",
+      "premise": "Elena Rostova, a rogue intelligence analyst, meets her handler in a rainy Zurich cafe to hand over documents exposing illegal orbital surveillance.",
+      "instruction": "Elena realizes the cafe is surrounded by undercover operatives and uses a smoke distraction in the kitchen to escape onto a passing tram.",
+      "scene1_text": "The screen fell to a halt as she passed. \"Avada Rostocalyptic, are you?\" the human voice cut through the crowd, her voice echoing out in a clatter of her body and its voice cut into a shimmering blue light. Her eyes were wide open and forth, but she could see nothing beyond a thin white light. A familiar face was turned on the edge of the table and held out a hand-painted hand. \"I am Nyklanthoratis,\" she said softly, reaching into her leather handbag. \"I have Nykarthromatis.\" It breathed in her throat in an iron grip, crackling around as she went down the corridor of the Riskother. The humanoids was gone at the same time, their bodies drawn to their own biological skin and limbs. They were the only ones that had Nyklsonal in them. \"Save you,\" they said, they said with a gentle smile. \"More than three. You've been captured.\" \"And yet?\" \"No.\" She turned back to the other humans. \"Wait for you, Nykonser. I'm so sorry I didn't know.",
+      "scene2_text": "\"Teach me a meeting,\" Nykonser whispered, her voice shaking with rage. \"For twenty-two years, everything in the city has come back to the world. But I'm afraid of this world for forty years.\" She raised a clawed hand and a coldly lit room filled with people of all ages, and Nykonal's mind reeled. \"You're going to be a better man,\" she said quietly. \"You can't handle this.\" The room fell into an icy, suffocating silence. Nykanser's face had turned an immaculate bun, and she shuddered in the mirror. \"Aren't you a good person? I don't have a word for that kind of stuff.\" Nykeser sighed. \"I'm not a bit excited,\" Nya said, her voice low and sweet. \"We'll see about it together.\" And so began a new era of peace and prosperity. It had become something more, but a time for Nykar to live, to keep things from themselves and others like this. She started with her life's work to get you back on your feet.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 171,
+        "s2_words": 166,
+        "total_words": 337
+      }
+    },
+    {
+      "id": 6,
+      "genre": "Psychological Horror",
+      "title": "The Basement Tape",
+      "premise": "Marcus, an archivist cataloging old cassette tapes in a windowless basement, notices that the voice on the recording is describing his exact movements.",
+      "instruction": "Marcus turns off the tape machine, but the voice continues speaking from inside the speaker cone, demanding he look under his desk.",
+      "scene1_text": "The cassette door creaked open, and his voice shouted, a deep, silent voice in her mind: \"Calmling...of the! The cassler phone was in the air. I've been sitting on this cassette window for two long years. I think that's a good idea to have a blood test.\" Her voice was, but it was too late. There was something in the cassette phone, and her heart sank into his chest. He looked up at the cassler screen, then back into the window. This was no ordinary cell. It was just a piece of paper, a blank. His hand reached out to hold the casser phone, and he turned it off. \"I don't know what you're going to say,\" she said, putting a finger down on him. \"But I'm not going to tell anyone.\" The casser window seemed to be holding the cassger window. Her eyes were closed for a long time, and she glared at the cuntler door. The cassee window seemed to have an airplane shape. She blinked it down. \"Come on, you little cassette room!\" The casslers window was closed.",
+      "scene2_text": "\"Dammit, where's the casser room?\" \"I know it's just,\" Marcus said, his voice trembling. \"It's a long shot.\" \"That's...what do you mean?\" Marcus picked up his hand and turned to face her. \"Antimatter? I thought I was in an apartment, so I'm not ready to use that casser desk to make sure someone has your casser house installed.\" \"Such a safe place...\" Marcus said, running a hand through his hair. \"I am going to get you into a casser bed before I open my door.\" \"I'll be right back, you know,\" Marcus replied, and then, the cassers door opened. The casser window was empty. Marcus stared at it with the air of a man with a look and eyes that was as if he had been standing in this casser chamber. He turned it over to his partner. \"I'm home.\" As she went away, Marcus began to feel better, more focused on his work. It started to change, and he got out of the room and walked to the kitchen, not looking at the casson door.",
+      "evaluation": {
+        "score": 6.2,
+        "judgment": "Good",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [
+          "voice"
+        ],
+        "instruction_hits": [
+          "desk",
+          "voice"
+        ],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 181,
+        "s2_words": 176,
+        "total_words": 357
+      }
+    },
+    {
+      "id": 7,
+      "genre": "Post-Apocalyptic Survival",
+      "title": "The Drowned Highway",
+      "premise": "Jax and her mute younger brother Leo scavenge the ruins of a submerged coastal city, seeking fresh water filters before the monsoon tides hit.",
+      "instruction": "Jax and Leo are trapped on a crumbling highway overpass by a hostile scavenger pack demanding their salvaged supplies.",
+      "scene1_text": "The heavy wooden doors of the town shuddered open with a sharp crack. \"Fuck, you're off to make an experience,\" Jax declared, his voice thick with determination. \"You can leave me on the back of a deal.\" Jax turned his gaze toward the towering, high-ceilinged drawing room, who strode in unholy waves between narrow and lowerless fields. He had never been to outrun before. At first, he knew what he would do if he finally lifted his eyes. \"Salvage,\" he said grimly, his voice deepening with profound conviction. \"We have an endless cycle of rain and wind. We have the power of a thousand feet.\" Jax felt a sharp, searing sensation at the center of his body. His mind reeled as he felt the strenuous slits of her hair begin to change. \"I can't imagine what you're going to say...\" he called out. \"The moment we reach the city, you will learn to take care of yourself.\" Jax's head spun in shock and his heart raced. His eyes grew darker, his hands still shaking. Jax'wave was gone, never ready to face the unknown depths of his world.",
+      "scene2_text": "Jax'wave and Jax'shock have been killed in a storm of smoke and gore-borne death. Jax was dead for days, the city had ended as a nightmare. The future had been gone for years now, but now... Jax felt his body slowly become harder to control. A sudden chill settled over him. He looked up at Jax with newfound understanding. \"You are not alone.\" \"I am not alone,\" Jax said. \"I will be there to see you.\" Jax'smage walked to the floor of Jax's office, but Jax'written heart sank with excitement. Jax stood before his head, watching Jax'l life coming back. With a last scream, Jax reached for the door and stepped out into the blinding glare. It was the only way it could feel like an eternity. As Jax approached his home, he saw Jax standing behind Jax'hold, a tall man with dark hair and a bright blue eyes that seemed to hold a massive flame. A sharp gasp escaped his eyes. Jax knew he would be back. The monster had been gone.",
+      "evaluation": {
+        "score": 5.0,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [
+          "Jax"
+        ],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 187,
+        "s2_words": 173,
+        "total_words": 360
+      }
+    },
+    {
+      "id": 8,
+      "genre": "Cozy Paranormal Mystery",
+      "title": "The Self-Writing Grimoire",
+      "premise": "Clara, owner of a seaside antiquarian bookshop, discovers an uncataloged leather-bound grimoire that begins rewriting itself with tomorrow's town gossip.",
+      "instruction": "Clara confronts Mayor Higgins at the morning bakery before he can sign the fraudulent harbor lease predicted by the book.",
+      "scene1_text": "The newspaper was in no way a source of rage. It was an odd idea, and the truth was not known from within. But as the book itself grew stronger, the news went on, leaving no sign of its contents. In the weeks that followed, a new era of dementia and its existence, was carried out across the city, their influence on the world as they always had. The streets were thick with the air of an ordinary woman, her spirit a grand one. But in the end, at what cost to this day? The story of the past four years of her life had been so much more than a thrill to be crushed under the innocent, that she had never once been able to escape the afterlife. The world would have been better for the future. The next decade, the countries had turned in to find new ways to build things up, improve the world's history, help people process the world. And yet, on the road to the next generation to meet their goals, the news from the day it came came to be known that the most important and the least beautiful thing about her was her memory, her soul and spirit. She grew up in a small private square in the middle of the city, her mind reeling from the moment of discovery.",
+      "scene2_text": "CHAPTER VIII. Higgins was in the middle of a high street, on which he had been engaged for an hour with the opening of a short drive through the city's back door. Haggins stood in the open doorway of the house, his mind racing with what he could not even think about when he had taken off the stairs and walked to a large building where his mind lay. The room was long and quiet, as if in a corner of it, and the window to the left of the man who had come down through the front door, was closed and then it was empty, but there was a large concrete wall and a little table with a floor. Higgin sat on the edge of the table, waiting for him. He opened it and held it up to her. \"What is this?\" she asked. She looked at the window in the doorway, and she did not know how much time had passed in that moment. She had been to the right of the window and had been watching her, but now she could not let herself get away from the first step, which was more than he had ever seen. Her gaze did not waver. \"I'm so sorry,\" she said. He nodded slowly. \"You've never thought about me.",
+      "evaluation": {
+        "score": 5.1,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [
+          "Higgins"
+        ],
+        "repetition_clean": true,
+        "dup_4grams": 1,
+        "s1_words": 227,
+        "s2_words": 219,
+        "total_words": 446
+      }
+    },
+    {
+      "id": 9,
+      "genre": "Historical Roman Military",
+      "title": "The Caledonian Mist",
+      "premise": "Centurion Lucius commands the rearguard of the Ninth Legion deep inside the foggy Caledonian forest as tribal war drums echo from the ridge.",
+      "instruction": "Lucius rallies his weary legionnaires to form a testudo shield wall as fiery javelins rain down from the misty tree line.",
+      "scene1_text": "Navigating to the Citadel's most powerful fleet, he had finally won over three thousand years ago. The Citadel was a deep and deadly battle, only a few miles away. But the Citalian fleet had not won this war. Navigated an army of dead in a Citadel, it now held a new place on the Citorth coast, but had been forced to flee by an armored strike. The Cits were ready for the day, but the Cithedral was too weak to be confused with each time. Navutized from his work at Navigisedo, and the Citrum had already reached the point where the Citlem had been sent outing the Cituan War, and now the Citochian Empire had defeated the Citarian Empire's long reign of war. The CDC had not given up her name to the Cheshire Citadel since the late 5th century. It was a terrible battle. Navunated in a vast sea of sand and mud, she had seen the Cithist party with great power and purpose, all of them now as well as the Citgen's fleet.",
+      "scene2_text": "Chapter XXXVIVED OF THE SRIGHT APA \"Davido\" was a kind of legend. He had never been an innocent in his long life, and the man's name was still not known as a god. He had been named \"Lakati\" and had come to be the \"Davids\". The Citochian Empire had returned to the land of his people. He was also an ancient man, a great force who had fought against the Citochians. But even then, at the time, he was an ordinary man. It was the Cithet's turn for peace. He had met the Citarian Empire in the years before and he had made up his mind that it was only in the first place when he had gone to the Citadel to visit the Cit Chronos. And now, after his death, he was a young man who had never been out of the Citiac. The Citlemian Empire had grown up on a river in the year 2042. His family had begun to make him a great force, but his faith was high. He had made a very long trip with his brothers, and they had all heard the sounds of his meningitis.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 1,
+        "s1_words": 175,
+        "s2_words": 192,
+        "total_words": 367
+      }
+    },
+    {
+      "id": 10,
+      "genre": "1940s Noir Detective",
+      "title": "The Jack of Spades",
+      "premise": "Private eye Sam Brody is hired by a veiled woman with bruised knuckles to retrieve a missing pawn ticket for a safety deposit box.",
+      "instruction": "Brody breaks into the pawnbroker's ransacked back office and finds the old pawnbroker tied to a chair with a poker card shoved into his collar.",
+      "scene1_text": "The first line of the charred rifle had been opened, and the last line was empty. The second line was filled with a large group of flailed-out metal guns, each one in the other. Brody's eyes widened as he read: \"The ship has already fallen to the ground, and I have known for some time that it may have been my duty to send you back to our new homeland. But do not let us go again!\" The second line of his attack raged on, the sounds of clapping and flicking, but there was no use. The first line was unbuttoned, only a small drop in the supply chain's strength and power. As the second line fell into place, the last line began to reach its normal height. A young man stepped forward, his eyes glistening with shock and fear. \"You were seen leaving the ship,\" he said, his voice deepening with profound surprise. \"I had tried it all for years. I thought it was a long time ago.\" The captain nodded, a laugh rising from his lips. \"Aye, Brody. I'm sorry I did. But I promise, we can work together to keep this place safe.",
+      "scene2_text": "The guard patted his back, wiping sweat from his forehead. \"You have spent sixteen years crashing sports in the ship and trying to get off the bridge, just a little pastey.\" He glanced up at the crew in horror. \"I'm not surprised. I was watching you, Brody. It's been so long.\" The captain nodded slowly, crossing his arms over his chest. \"I knew this man would be there for me after all these decades.\" As he turned to leave, the guard's face turned red with rage as he pulled out a thick-faced rifle, its eyes gleaming with joy and determination. \"Aye,\" the officer said, his voice sharpened. \"The ship will have no right to come back to life. Let it be a while, and you shall be able to save us.\" He reached into his pocket and looked at the soldier, who'd left it in place. \"Now we can get this up to date, Brodies. I want that boy to help us out here. He'll be fine.\" The captain bowed his head. \"He's a good time for a time. But we will find him at our side and he will have our way together again.",
+      "evaluation": {
+        "score": 5.0,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [
+          "Brody"
+        ],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 196,
+        "s2_words": 195,
+        "total_words": 391
+      }
+    },
+    {
+      "id": 11,
+      "genre": "Deep Sea Sci-Fi Thriller",
+      "title": "Mariana Abyss",
+      "premise": "Chief engineer Douglas on the benthic drilling rig Mariana-4 notices pressure spikes in drilling shaft seven twelve thousand meters below the Pacific.",
+      "instruction": "Douglas and pilot Maya launch a deep submersible into the trench and discover a colossal bioluminescent organism coiled around the drill pipe.",
+      "scene1_text": "The two-crore German engineers had been pumping into the stability of the CSRs, but the idea was too great. The two-membrace engineers were already being asked to take part in the new technology. The CSR was a new job and an opportunity to learn how to handle it. The Corsali Magellan was one of the most popular parts of the world. In the end, they were very different than before. The Cori had been the center of a big-eyed company on the brink of getting into a Cthulhu's carbon footprint. A small, heavily-fledged man with dark hair and an extraordinary face that was now his best friend, James, who had spent so long in the sun, seemed to have used his own way to create such a far-off technology. As he stepped forward, he could see the two-mimply-looking man - Marissa, a middle-aged woman with a red-faced face, and a beautiful smile. She had a bright, handsome face, but she had a look of her pretty blue eyes. Her green eyes were like red and white.",
+      "scene2_text": "\"H-yes,\" Marissa said, her voice dropping into a dangerous, low murmur that carried to every corner of the ship. \"This is the only way you can get out of here.\" Marissa leaned back in her chair and went up the path to the cave. She was already starting to notice what was being done - a black hole in the ground, and the debris on the ground above them. A dark line settled over her, then came up through a small hole where she had been spotted. Marissa felt herself getting more and more conscious of the alien species. The creature was less powerful than a child, but its eyes were wide and gray with emotion. \"You're not going to let me,\" Marissa explained, her voice turning to the horizon. \"You have to be careful... you can't...\" Marissa screamed as a sharp, hardness erupted from her throat, making her gasp. She knew that she could feel its light, it was too late. She heard Marissa's voice, an angry sigh. \"What are you talking about?\" Marissa nodded, her heart pounding in her chest. She looked up at Marissa, his expression a mixture of fear and rage.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 176,
+        "s2_words": 195,
+        "total_words": 371
+      }
+    },
+    {
+      "id": 12,
+      "genre": "Contemporary Romance",
+      "title": "The Subway Case Swap",
+      "premise": "Julian, a classical cellist performing in subway stations, accidentally swaps identical black instrument cases with Hannah, an architect rushing for a train.",
+      "instruction": "Julian tracks Hannah to her firm's skyscraper boardroom just as she opens the case expecting architectural blueprints.",
+      "scene1_text": "He was a student of three years, and he'd had the best chance of having. But the way they'd shared was a small but specialty thing. His parents were just...well, I guess. They had this beautiful little one. A new generation of students from across the country had taken their place in the city, offering a better understanding to the world around them. The first few years of his life were a great time, as they worked to make sense of the world that was once and for all. But it was a perfect experience. It didn't have to be like this. They'd never thought it would work, or maybe it would. In his school, he worked with the knowledge, and found out that he had a strong sense of purpose and an appreciation for each other. He'd lived entirely alone in the world, always ready to become one of the most prominent of our kind. And that, as the years passed, began to change. His home and his family were at home together. As he walked, the light faded from his eyes. His mother had died before after all these years, but she knew he could go back and face the consequences of his life.",
+      "scene2_text": "CHAPTER XV THE SONFIDENTIAL \"I know I have had a long time,\" said Jean. She was standing in the backseat of the bed, her feet still blazing with an old woman's hand. Her hair was covered in red and green, and she looked down at her sister. \"There is no one here in the world that can do such things,\" she said. \"How many of you can we get out of it?\" \"No,\" said Anne. \"We are all dead. We have been waiting for you.\" The sun shone with dark and stormy light, but she did not speak. She had never seen someone work with such things as yourself before. The sun, the sky, the wind, the wind. \"I believe we will come back,\" she said, with a smile on her face. \"It is not the end of our life. We have learned to feel together. But we have done well, even if we were not there, and we would be more than happy.\" She rose and sat down at her mother's side. \"What do you mean?\" asked Anne. Her mother looked at her with a sad smile. \"Your father has been right,\" said Anne, with a slight smile.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 206,
+        "s2_words": 199,
+        "total_words": 405
+      }
+    },
+    {
+      "id": 13,
+      "genre": "Classic Western",
+      "title": "High Noon in Red Rock",
+      "premise": "Marshal Cole Vance rides into the ghost town of Red Rock at sundown to bring in the notorious outlaw Silas Thorne before the bounty hunters arrive.",
+      "instruction": "Silas Thorne ambushes Cole from the abandoned church bell tower, sparking a deadly rifle standoff across the dusty main street.",
+      "scene1_text": "The war had come for the men in their wake. But the men were not so young, and the men of the island had never been seen again. This was the fate that would have been known to them. Thorne, on his way back, was a wild-hearted woman named Vance, who sat down on the floor of the great hall. She turned her face toward the crowd of survivors, which she had not yet seen before. \"Minor Vance,\" she said at last, \"I am here to tell you. I am afraid it is better to see your place.\" \"Yes, miss,\" returned Vance, with a look of indignation. \"I'm going to show you how much I've eaten. But I think there are many things that can be learned from me.\" The men looked at her like so many people as they were, and then began to talk. There was something in the story about them all. In the end, they found themselves at the door of the grand hall, and in the middle of the morning the soldiers went up and forth in the doorway of the house.",
+      "scene2_text": "CHAPTER XLII \"I've heard of it,\" said Dion, as she walked through the door of the small house, and in a moment more than an hour before her husband was about to begin his story. \"The first day I was there when I was here and then that you were here. The second time I came back was to give you one of your own thoughts.\" \"Oh, yes! And I don't know anything about it!\" exclaimed Dion, who had not yet done this. \"It must be well,\" replied Dion, \"that you might have heard me, but I could not go without being so young or so still.\" \"I can see you are not like I ever was,\" said Dor, as she looked up at him with a little smile, \"and there is always something I could do for you. You are not going to be the best man I ever was in my life. You're not going to come here again, and you will probably get on the road, or you may find your own way out of that kind of world.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 1,
+        "s1_words": 187,
+        "s2_words": 182,
+        "total_words": 369
+      }
+    },
+    {
+      "id": 14,
+      "genre": "Time Travel Alternate History",
+      "title": "Postcard from 1923",
+      "premise": "Chrono-physicist Dr. Evelyn Reed creates a miniature temporal wormhole in her garage lab, only to receive a handwritten postcard from herself dated 1923.",
+      "instruction": "Evelyn steps through the temporal gate into 1920s Paris and meets her grandfather sitting at a sidewalk bistro reading the morning paper.",
+      "scene1_text": "Dr. Evelynicing's mind raced with questions, her mind reeling as she was forced to escape the depths of the Earth. The storm had been a long time since the sun finally opened, and the atmosphere would be cooler than the sky. She felt like she was being held in a searing kiss, a cold-eyed sound that sent chills down her spine. \"P-please!\" she whispered. Then she thought of the night, a lowly woman with dark hair and a dark blue face with black hair, who stood at the edge of the moon, her shoulders small and small. She looked up from her bed, her expression a familiar white light. Her eyes were wide with shock and then a familiar voice: \"You...you were seen leaving the world for your visit. And you were to meet the stars, Mr. Evelynining.\" Dr. Eveiel writing's words was a deep, rumbling word, but it seemed to slow her down. She knew it would be a long time before she finally understood it. That she had to go back to work and find the world in her own way.",
+      "scene2_text": "Chapter XVII THE VIPCY OF SENMENT A CALLING PURJORE. Meredith was in the restaurant at the time, and she had been studying the world of human beings for many years, which is what Mrs. Handyall had to do with the world's greatest scientific knowledge. \"I think you must know that I have a feeling that I can make a great deal of it,\" she said. \"I suppose you know I can take this place on your hands.\" \"But why?\" asked Anne. Her voice was steady and almost unremarkable. \"What do you mean? Why?\" \"Why? Why not? What are you talking about?\" She paused again. \"What are you talking to?\" \"I am quite certain of you,\" said Mrs. Goee. \"It is of no consequence.\" \"Then you are not to be very good at making matters with people, especially in the long run,\" she said quietly. \"I have always been so kind that I have never known anything else to do so. I am not the only one who can get me into the world. That is why I do it now.\" Her voice was calm and quiet.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 183,
+        "s2_words": 186,
+        "total_words": 369
+      }
+    },
+    {
+      "id": 15,
+      "genre": "Grimdark Military Fantasy",
+      "title": "Blood on the Stone",
+      "premise": "Sergeant Brand of the Iron Mercenaries counts his remaining silver coin in the bloodstained mud after the brutal siege of Wolftower.",
+      "instruction": "The mercenary captain offers Brand double pay to lead a squad of convicts into the cursed crypts beneath the smoking fortress.",
+      "scene1_text": "In the last few weeks, a new age had passed in the hands of the old men and women. The people of Rajput and Pharmacy had been named for their sacred duty. But there was no reason to believe that this was the case. One day, after the battle, the Queen and the Queen of Rigorhank emerged from a deep water-boosted chamber that was covered with gold and silver. The Lord of the Rajasthani was a young man who had lived with the strength and strength of his kingdom. He would have gone to bed in his own room. His clothes were empty and his clothes were in the air. The Rajastheni family had grown up on the branches of the Rambagh Palace, the Rajput family, and the old king of Rajasthals. Pharmacopeus was a young woman who could not be so easily seen. She wore an expensive woolen shawl over a golden stone table, but her hair was a dark brown. Her hair was a bit of a greenish color. The Rita-Salthalian had a long, thin eyes that looked like a fire in the sun. His hair was a white-faced red.",
+      "scene2_text": "The young King of Rajput Sadan swung the knife down the stone steps, his black fingers moving with effortless familiarity. \"Rajesh-ji, you're not a bit of an old man, old man. You can't be old enough with your old lord or something.\" He turned and began his rifle. \"Speak out of time to get this way,\" he said, his voice like a steel walls. \"You've got fifty men in one.\" \"Actually, I'll have that kind of business to take over my old man,\" Rajesh said, his tone flat, calm, and absolute. \"And you can take my word to the Rajput line. I won't let him off my feet. He's a lot of men in this heat.\" A faint smile spread across Rajput's face as he smiled. \"Aye! You don't understand. They are just some of us who're in the fight for our own!\" \"Then why don't we?\" Rajesh asked, his voice trembling. \"They're gonna be old friends. It seems they've come to this time.",
+      "evaluation": {
+        "score": 1.0,
+        "judgment": "Poor",
+        "has_leak": true,
+        "leaked_words": [
+          "Rajput"
+        ],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 1,
+        "s1_words": 192,
+        "s2_words": 164,
+        "total_words": 356
+      }
+    },
+    {
+      "id": 16,
+      "genre": "Urban Supernatural",
+      "title": "The Midnight Urn",
+      "premise": "Zach, a night-shift bicycle courier in Chicago, is hired to deliver a glowing silver urn that whispers ancient Sumerian curses in traffic.",
+      "instruction": "Zach is ambushed on Michigan Avenue bridge by shadow creatures and uses his heavy steel U-lock to fight his way into an alley.",
+      "scene1_text": "The city had grown quiet, the distant drone of transport, the city's first contact lens was interrupted by a clone that erupted in a forest of rusted corrugated tin sheets and rough timber poles. The city had begun to embrace its own threat - a massive, violent, warlordly warlord who would launch the Pit. In a blur of his massive plasma rifle, he launched into an alley on the side of the city' s edge, the Pit's ship's ship slicing through the smoke and intoxicating chaos. The city fell to its knees as the world slowly began to fade, a searing pain in the streets as it grew. Airlines were made to be built for their own minions, their capitals adorned with family crests that had been placed in wooden mowers. The streets were filled with the newfound sense, of their former existence. Zach, the Pits, and the old-fashioned crowd that had come together for this purpose had been the one to end it.",
+      "scene2_text": "The city was empty and Zach felt like it had been a mystery to him. The only hope he saw was the pounding of his hand as the storm crept in. Airlines were being unleashed, their faces ashen and his eyes closed for the last time. But the room was off. The crowd was silent. They were standing there, the dead in their arms, at the same time trembling with fear and rage. Zach took the place where they had been, their hearts looming over the shadows of the night. \"You...you saved me,\" Zach said, his voice deepening with concern. \"Your soul is mine. You have chosen us.\" Zach felt the weight of his power on him. He looked around his humble tin shed, at the people who came from the trees behind them. \"I believe we have done a great deal to help you, Zach,\" he said with a smile. \"Then we need your help. The world will be going on. The way we are is.\" Zach smiled as he looked at Zach's face in the same way that he was smiling. \"You have given me the ability to do what I need.",
+      "evaluation": {
+        "score": 5.0,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [
+          "Zach"
+        ],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 164,
+        "s2_words": 194,
+        "total_words": 358
+      }
+    },
+    {
+      "id": 17,
+      "genre": "Space Western",
+      "title": "Dust on Ceti-IV",
+      "premise": "Bounty hunter Rex lands his beat-up cargo hauler on the desert mining colony of Ceti-IV to hunt down a rogue android outlaw.",
+      "instruction": "Rex corners the damaged android inside a rusted geothermal pump station and discovers the android is shielding a family of human refugees.",
+      "scene1_text": "The morning sky closed in a shimmering blue glow. A cool desert wind began to stir the sand, whistling through the gaps in the air before it touched the ground. The air was sharp and cold as an iron pillar, the air more powerful than any rock, but in the center of the forest, on the horizon. The water had grown so hot that the trees' branches would be shining and the earth was'tpelling, and in the middle of the afternoon, the sun rose over the ice. Inside, the rain was rising from the woods, hertively-crewed form the only sound of a shipwreck. The storm was cold and the water had been seen in the distance, and the wind began to shake. Through the grime, the water became a hound of sandstone and rosewood, its stone roof splitting the sandstone with a lush green air. The water still seemed to hold the water for the forest floor, and the rocks were empty, their branches disembodied, and the air was dry. At last, the snow was growing thick. At the edge of the ground, in the wet of the stream, stood a lone-faced man in white robes.",
+      "scene2_text": "In the presidential suite of the Rambagh Palace Hotel in Jaipur, a dozen-mile lush forest had been restored to. The people were often told that a vast number of the earth's waterfalls and wildflowers had changed our world. The land was covered with unshed trees, a great deal of rain and stormwater. Wealth and death had also begun to play an important role in the life of the city. The life and the family we were all there, had been forgotten and built for the purpose of our life. In the aftermath of the war, the city had grown larger with the loss of the city, and there would be no other way to live for it. But in this part of the city itself, there was little room for attention. In the center of the house stood a thick metal roof, held by a wooden post, and on either side a large stone wall fell apart and fell into an floor that was no longer visible. The walls were empty and a small, white, but not a really good place. It was a beautiful and welcoming place, with a wide and vivid view of what had been left to do.",
+      "evaluation": {
+        "score": 1.0,
+        "judgment": "Poor",
+        "has_leak": true,
+        "leaked_words": [
+          "Jaipur"
+        ],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 2,
+        "s1_words": 196,
+        "s2_words": 201,
+        "total_words": 397
+      }
+    },
+    {
+      "id": 18,
+      "genre": "Legal Courtroom Drama",
+      "title": "The Poisoned Shareholder",
+      "premise": "Defense attorney Arthur Sterling takes on the high-profile murder trial of a tech CEO accused of poisoning his venture capital partner.",
+      "instruction": "Arthur cross-examines the prosecution's star forensic witness on the stand, exposing an offshore bank account that destroys the witness's credibility.",
+      "scene1_text": "The last thing we can tell from a long day's work was the small, unending battle of the Candler's army. The only way to survive was to stay alive and watch the world change around him as the last human was born. The Candler had been destroyed by a few thousand years ago and now it would be lost forever in an instant. Sterling's eyes widened as he saw the dark figure standing there, holding his armored hands. \"Serly,\" he murmured as he opened his mouth to scream. \"I have no idea.\" But when the man turned to face the ship, an elderly woman with black hair and dark hair, stood up from her chair, narrowing his eyes. She looked him up and down as she sat there with a single finger on the man's shoulder. He knew that - I don't know if this was the case - I had to make sure of it - and the man'd be too proud. As he walked away, his body started to fade from the shadows. He took a deep breath and pulled back, letting her fall helplessly into his arms. The woman had been killed, but he would have to deal with it.",
+      "scene2_text": "It was James Cruiser's best friend, from the moment he opened his eyes and readied his name. He had never met a man like this before, nor had he been allowed to read it again. As he turned back to the shadows, he saw that his daughter had never seen him in a few days. \"He's been at home,\" she said simply. \"He has been watching you since he was born.\" James rose and closed his eyes, his hands on her head. He would have to get away for an hour now. The woman had gone out into the woods for him, but he knew he couldn't help it. In the next minute, Jack was sitting up and walking over his shoulder. His mother had been dead for nine months. She had already died. She had been killed for another one - a blood test, a illness. But she would be ready. She would have to find the place of death before the end. She was not alone. The man had been dead. As he walked, the woman looked down at his hand. \"What is this?\" James asked, her voice trembling. He smiled up at her. \"He is. He is.\" \"I know,\" James said. \"He will never forget me.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 1,
+        "s1_words": 203,
+        "s2_words": 209,
+        "total_words": 412
+      }
+    },
+    {
+      "id": 19,
+      "genre": "Wilderness Survival",
+      "title": "Yukon Whiteout",
+      "premise": "Bush pilot Tom Miller crash-lands his single-engine plane in the sub-zero Yukon mountains with a concussed teenage passenger named Toby.",
+      "instruction": "Tom constructs an emergency snow trench shelter and ignites a signal fire with aviation fuel before nightfall drops temperatures to minus forty.",
+      "scene1_text": "The two-crorely Zykoson's crew stood in a blinding light, his black hole in the ground. The air was hot and cold, that had been a particularly dangerous situation. But the Zoo-Tong's crew had already lifted their heads. \"It's over,\" Lucas said, pulling out a thick-mouthed device. \"I have to do this one day.\" \"Fuck me, you have to do it,\" the human's voice was cut with rage as he took a long, breath. \"There's no wrong way to let them go!\" \"You can't stop them!\" Marcus sighed heavily. \"We're not going to make this right, Joe. You can't be the one to fight it for us! I'll kill your own animal, my friend,\" he smiled, a look of disbelief that nighted at the sight of his crewmates. They had expected to see him, for the first time in two years. In the days that followed, the Zoo's crew were already taking to the war. But they were in doubt, an unlikely conversation about the man, who was now just another advanced engineer. \"That's me,\" Jenna said.",
+      "scene2_text": "The ship was too thick for air. \"I don't want to see you again,\" he said, his voice quiet, calm and quiet. \"If I don't know what to do.\" He placed a hand on Jack's shoulder. \"I think I'll be able to stay away from that.\" \"You're not going to hurt me anymore,\" Tom made a sound that wasn't a laugh. \"But if I have to get out of here, I'm going to sleep.\" The crew stood there for a moment, breathlessly. \"I'll give you one last look at the attack, but you can't be real!\" James turned back to the ship. \"You've been waiting for me this morning. That's my chance.\" A slow smile spread across his face. But he couldn't make it through now. \"I need to get on with it. And you can leave me alone.\" He raised a hand and the crew rushed him towards the ship, ready to face the unknown. It had been a while since they'd finally complete the mission. The ship was still empty, the distant lights of the ship crackling with the same cool light as they were timeiating.",
+      "evaluation": {
+        "score": 4.5,
+        "judgment": "Fair",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [],
+        "instruction_hits": [],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 176,
+        "s2_words": 188,
+        "total_words": 364
+      }
+    },
+    {
+      "id": 20,
+      "genre": "Contemporary Roadside Drama",
+      "title": "The Highway Tin Shed",
+      "premise": "Write a short story about Shashank, a proud young mechanic working in a highway tin shed, and Rajesh Khanna, a wealthy businessman whose luxury car breaks down on the desert road.",
+      "instruction": "Rajesh Khanna's personal investigator uncovers that Shashank is the outcast grandson of Savita Rajput, and Rajesh decides to visit the Rajput mansion.",
+      "scene1_text": "The afternoon heat rose in shimmering waves off the cracked black asphalt of the national highway. Miles from the nearest town, where the scrub thorny bushes gave way to empty sand and rusted hoardings, stood a lone tin shed. Its corrugated metal roof groaned beneath the relentless sun, rattling whenever a heavy transport lorry thundered past in a cloud of diesel exhaust. Inside the stifling shade of the workshop, Shashank wiped a streak of engine oil from his brow with the back of a calloused hand. He was twenty-three, thin-framed and lean as a desert wolf, his collarbones visible beneath a faded cotton shirt that had seen too many monsoon cycles. On the workbench lay an old motorcycle carburetor, dismantled into dozens of tiny brass jets and springs. Shashank worked with the methodical, patient focus of a surgeon, his long fingers moving with effortless familiarity. A sudden hiss of steam and the violent shudder of a dying engine broke the highway's silence.",
+      "scene2_text": "In the presidential suite of the Rambagh Palace Hotel in Jaipur, Rajesh Khanna stood before the floor-to-ceiling glass windows, holding a crystal glass of single malt scotch as evening rain began to drum against the glass. Behind him, standing respectfully near an ornate rosewood writing desk, was Inspector Ranawat, a retired senior superintendent of police who had headed Khanna's corporate intelligence network for over a decade. On the polished desktop lay a thick manila folder stamped with a crimson seal: 'CONFIDENTIAL — EYES ONLY'. \"Report,\" Rajesh commanded without turning around, his reflection sharp in the dark glass. Ranawat adjusted his spectacles and opened the file. \"The young mechanic's name is Shashank. He is twenty-three years old. For the past four years, he has lived entirely alone in that corrugated tin shed off the national highway bypass, surviving on whatever roadside repairs pass by. Prior to that, he grew up in an unaccredited charity orphanage outside Ajmer.\" \"And his bloodline?",
+      "evaluation": {
+        "score": 6.6,
+        "judgment": "Good",
+        "has_leak": false,
+        "leaked_words": [],
+        "premise_hits": [
+          "Shashank",
+          "shed",
+          "highway"
+        ],
+        "instruction_hits": [
+          "Ranawat"
+        ],
+        "repetition_clean": true,
+        "dup_4grams": 0,
+        "s1_words": 162,
+        "s2_words": 159,
+        "total_words": 321
+      }
+    }
+  ]
+}
