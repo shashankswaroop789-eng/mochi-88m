@@ -27,12 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent
 REPOS = {
     "300m": {
         "name": "Mochi-Novel-300M (Flagship)",
-        "hub": "https://huggingface.co/Shashank1227/mochi-novel-300m",
+        "hub": "https://huggingface.co/Shashank1227/moochi-300m",
         "files": {
-            "mochi_novel_300m_golden_rajput.pt": "https://huggingface.co/Shashank1227/mochi-novel-300m/resolve/main/mochi_novel_300m_golden_rajput.pt",
-            "mochi_novel_300m.pt": "https://huggingface.co/Shashank1227/mochi-novel-300m/resolve/main/mochi_novel_300m.pt",
-            "spm_novel_16k.model": "https://huggingface.co/Shashank1227/mochi-novel-300m/resolve/main/spm_novel_16k.model",
-            "spm_novel_16k.vocab": "https://huggingface.co/Shashank1227/mochi-novel-300m/resolve/main/spm_novel_16k.vocab"
+            "mochi_novel_300m_golden_rajput.pt": "https://huggingface.co/Shashank1227/moochi-300m/resolve/main/mochi_novel_300m_golden_rajput.pt",
+            "mochi_novel_300m.pt": "https://huggingface.co/Shashank1227/moochi-300m/resolve/main/mochi_novel_300m.pt",
+            "spm_novel_16k.model": "https://huggingface.co/Shashank1227/moochi-300m/resolve/main/spm_novel_16k.model",
+            "spm_novel_16k.vocab": "https://huggingface.co/Shashank1227/moochi-300m/resolve/main/spm_novel_16k.vocab"
         }
     },
     "88m": {

@@ -1,7 +1,7 @@
 # 🍡 Mochi: Storytelling LLMs Built 100% From Scratch in PyTorch
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.1+-EE4C2C.svg?style=flat&logo=pytorch)](https://pytorch.org/)
-[![Hugging Face 300M](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Mochi--Novel--300M-FFD21E.svg)](https://huggingface.co/Shashank1227/mochi-novel-300m)
+[![Hugging Face 300M](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Mochi--Novel--300M-FFD21E.svg)](https://huggingface.co/Shashank1227/moochi-300m)
 [![Hugging Face 88M](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Mochi--88M-FFD21E.svg)](https://huggingface.co/Shashank1227/mochi-88m)
 [![CUDA](https://img.shields.io/badge/CUDA-12.0+-76B900.svg?style=flat&logo=nvidia)](https://developer.nvidia.com/cuda-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -200,5 +200,5 @@ mochi-88m/
 - **License:** MIT License
 - **Author:** [Shashank Swaroop](https://github.com/shashankswaroop789-eng)
 - **Hugging Face Hub Repositories:**
-  - [Shashank1227/mochi-novel-300m](https://huggingface.co/Shashank1227/mochi-novel-300m)
+  - [Shashank1227/moochi-300m](https://huggingface.co/Shashank1227/moochi-300m)
   - [Shashank1227/mochi-88m](https://huggingface.co/Shashank1227/mochi-88m)

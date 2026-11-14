@@ -154,8 +154,8 @@ CONFIG_JSON_CONTENT = {
 
 def main():
     parser = argparse.ArgumentParser(description="Upload Mochi-Novel-300M weights to Hugging Face Hub")
-    parser.add_argument("--repo-id", type=str, default="Shashank1227/mochi-novel-300m",
-                        help="Hugging Face repository ID (e.g. Shashank1227/mochi-novel-300m)")
+    parser.add_argument("--repo-id", type=str, default="Shashank1227/moochi-300m",
+                        help="Hugging Face repository ID (e.g. Shashank1227/moochi-300m)")
     parser.add_argument("--token", type=str, default=None,
                         help="Hugging Face Access Token with write permission")
     parser.add_argument("--private", action="store_true", help="Make repository private")
