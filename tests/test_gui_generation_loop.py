@@ -6,13 +6,15 @@ import torch
 import sentencepiece as spm
 
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0, r"C:\Users\user\.gemini\antigravity\scratch\gpt_from_scratch")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 from modern_transformer import ModernGPT
 
 sp = spm.SentencePieceProcessor()
-sp.load(r"C:\Users\user\.gemini\antigravity\scratch\gpt_from_scratch\spm_novel_16k.model")
+sp.load(os.path.join(ROOT_DIR, "spm_novel_16k.model"))
 
-ckpt = torch.load(r"C:\Users\user\.gemini\antigravity\scratch\gpt_from_scratch\mochi_novel_300m.pt", map_location="cuda", weights_only=False)
+ckpt = torch.load(os.path.join(ROOT_DIR, "mochi_novel_300m.pt"), map_location="cuda", weights_only=False)
 cfg = ckpt["config"]
 model = ModernGPT(
     vocab_size=cfg["vocab_size"],

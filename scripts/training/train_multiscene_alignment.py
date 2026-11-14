@@ -1,10 +1,9 @@
 """
-🍡 Train Mochi-Novel-300M Masterpiece Alignment
-Fine-tunes the 295.1M model exclusively on gold-standard long-form literary chapters:
-- Pacing: 800+ words per scene
-- Zero name distortion
-- Pure third-person point-of-view
-- Perfect entity binding for both canonical and arbitrary names
+🍡 Train Mochi-Novel-300M Multi-Scene Continuity Alignment
+Trains the 295.1M model on scenes 1 through 6, and scene transitions (1->2, 2->3, 3->4, 4->5, 5->6):
+- Resolves character confusion (Rajesh Khanna is the tycoon, Savita Rajput is the matriarch).
+- Enables accurate follow-up generation for 'Generate Scene 2 with Instructions'.
+- Runs live verification test with the user's exact instruction.
 """
 
 import os
@@ -20,26 +19,27 @@ import sentencepiece as spm
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-if BASE_DIR not in sys.path:
-    sys.path.insert(0, BASE_DIR)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = ROOT_DIR
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
 from modern_transformer import ModernGPT
 
 # Hyperparameters
 BATCH_SIZE = 1
 GRAD_ACCUM_STEPS = 8             # Effective batch = 8 * 1536 = 12,288 tokens/step
-MAX_STEPS = 180                  # ~3-4 minutes on RTX 3060
-EVAL_INTERVAL = 30
+MAX_STEPS = 150                  # ~2.5-3 minutes on RTX 3060
+EVAL_INTERVAL = 25
 EVAL_ITERS = 10
-LEARNING_RATE = 4.5e-5           # Optimal fine-tuning rate
-MIN_LR = 5.0e-6
-WARMUP_STEPS = 20
+LEARNING_RATE = 4.0e-5           # Gentle alignment rate
+MIN_LR = 4.0e-6
+WARMUP_STEPS = 15
 WEIGHT_DECAY = 0.02
 GRAD_CLIP = 1.0
 
 CHECKPOINT_PATH = os.path.join(BASE_DIR, "mochi_novel_300m.pt")
-DATASET_PATH = os.path.join(BASE_DIR, "data", "masterpiece_novel_sft_tokens.pt")
+DATASET_PATH = os.path.join(BASE_DIR, "data", "multiscene_novel_sft_tokens.pt")
 TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_novel_16k.model")
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -55,7 +55,7 @@ def get_lr(step):
 
 def main():
     print("=" * 80)
-    print(" 🍡 MOCHI-NOVEL-300M MASTERPIECE NOVEL ALIGNMENT TRAINING")
+    print(" 🍡 MOCHI-NOVEL-300M MULTI-SCENE NOVEL CONTINUITY TRAINING")
     print(f" Compute Device       : {device.upper()} ({torch.cuda.get_device_name(0)})")
     print(f" Dataset              : {os.path.basename(DATASET_PATH)}")
     print(f" Target Sequence Len  : 1,536 tokens (~1,100 words per scene)")
@@ -67,7 +67,7 @@ def main():
     sp.load(TOKENIZER_PATH)
 
     # 2. Load Dataset
-    print("\n[1/4] Loading Masterpiece SFT dataset...")
+    print("\n[1/4] Loading Multi-Scene SFT dataset...")
     d = torch.load(DATASET_PATH, weights_only=False)
     train_data = d["train"]
     val_data = d["val"]
@@ -125,10 +125,10 @@ def main():
 
     print("\n[3/4] Estimating initial validation loss...")
     init_val_loss, init_val_ppl = estimate_loss()
-    print(f"      Initial Validation Loss: {init_val_loss:.4f} | Perplexity: {init_val_ppl:.2f}")
+    print(f"      Initial Validation Loss: {init_val_loss:.4f} | Perplexity: {init_val_ppl:.2f}", flush=True)
 
     # 5. Training Loop
-    print("\n[4/4] Starting Masterpiece Alignment Training...")
+    print("\n[4/4] Starting Multi-Scene Alignment Training...")
     best_val_loss = init_val_loss
     model.train()
     start_time = time.time()
@@ -177,49 +177,49 @@ def main():
                     "val_loss": val_loss,
                     "val_ppl": val_ppl,
                     "step": step,
-                    "model_name": "Mochi-Novel-300M Masterpiece"
+                    "model_name": "Mochi-Novel-300M Multi-Scene Masterpiece"
                 }, CHECKPOINT_PATH)
 
+    # Save final weights to guarantee latest state
+    torch.save({
+        "model_state_dict": model.state_dict(),
+        "config": config,
+        "val_loss": best_val_loss,
+        "val_ppl": math.exp(min(best_val_loss, 20.0)),
+        "step": MAX_STEPS,
+        "model_name": "Mochi-Novel-300M Multi-Scene Masterpiece"
+    }, CHECKPOINT_PATH)
+
     print("\n" + "=" * 80)
-    print(" 🎉 MASTERPIECE NOVEL ALIGNMENT TRAINING COMPLETE!")
+    print(" 🎉 MULTI-SCENE CONTINUITY TRAINING COMPLETE!")
     print(f" Final Best Val Loss: {best_val_loss:.4f}")
     print("=" * 80, flush=True)
 
-    # 6. Live Verification Tests
-    print("\n--- LIVE VERIFICATION GENERATIONS ---", flush=True)
+    # 6. Live Verification of Scene 2 Instruction
+    print("\n--- LIVE VERIFICATION OF USER'S EXACT SCENE 2 INSTRUCTION ---", flush=True)
     model.eval()
 
-    test_prompts = [
-        # Test 1: User's exact prompt from screenshot
-        (
-            "Shashank & Samira (User's Exact Scenario)",
-            "### Prompt:\nWrite a short story about Shashank, a proud young mechanic working in a highway tin shed, and Samira Khanna a daughter of wealthy businessman whose luxury car breaks down on the desert road.\n\n### Story:\n"
-        ),
-        # Test 2: Arbitrary Out-of-Vocab Name Test (JNDNWND from Request 1)
-        (
-            "JNDNWND & Shashank (Arbitrary Name Entity Binding)",
-            "### Prompt:\nWrite a short story about Shashank, a proud young mechanic working in a highway tin shed, and JNDNWND a daughter of wealthy businessman whose luxury car breaks down on the desert road.\n\n### Story:\n"
+    prev_tail = 'Rajesh Khanna stood rooted to the gravel, staring at the boy\'s retreating back. A slow, calculating smile touched the tycoon\'s lips. He turned to his driver. "Call my personal investigator the moment we reach signal range. I want that boy\'s name, his parentage, and every breath he has taken since the day he was born."'
+    instruction = "Rajesh Khanna's personal investigator uncovers that Shashank is the outcast grandson of Savita Rajput, and Rajesh decides to visit the Rajput mansion."
+    
+    test_prompt = f"### Prompt:\nPrevious scene ending:\n{prev_tail}\n\nNext scene:\n{instruction}\n\n### Story:\n"
+    
+    ids = sp.encode_as_ids(test_prompt)
+    idx = torch.tensor([ids], dtype=torch.long, device=device)
+    with torch.no_grad():
+        out = model.fast_generate(
+            idx,
+            max_new_tokens=450,
+            temperature=0.7,
+            repetition_penalty=1.12,
+            no_repeat_ngram_size=0,
+            stop_on_eos=False
         )
-    ]
-
-    for label, prompt in test_prompts:
-        print(f"\n{'='*30} {label} {'='*30}", flush=True)
-        ids = sp.encode_as_ids(prompt)
-        idx = torch.tensor([ids], dtype=torch.long, device=device)
-        with torch.no_grad():
-            out = model.fast_generate(
-                idx,
-                max_new_tokens=450,
-                temperature=0.7,
-                repetition_penalty=1.12,
-                no_repeat_ngram_size=0,
-                stop_on_eos=False
-            )
-        gen_tokens = out[0].tolist()[len(ids):]
-        gen_text = sp.decode(gen_tokens)
-        words = len(gen_text.split())
-        print(f"Generated Words: {words}", flush=True)
-        print("Generated Output:\n" + gen_text + "\n", flush=True)
+    gen_tokens = out[0].tolist()[len(ids):]
+    gen_text = sp.decode(gen_tokens)
+    words = len(gen_text.split())
+    print(f"Generated Words: {words}", flush=True)
+    print("Generated Scene 2 Output:\n" + gen_text[:850] + "\n...", flush=True)
 
 if __name__ == "__main__":
     main()

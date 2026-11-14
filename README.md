@@ -167,13 +167,28 @@ mochi-88m/
 ├── modern_transformer.py        # Core RoPE, RMSNorm, SwiGLU, KV-Cache ModernGPT
 ├── story_studio_gui.py          # Native Tkinter Desktop GUI with Dual-Engine support
 ├── generate.py                  # CLI inference generation tool
-├── download_300m_model.py       # 1-Click Hugging Face downloader for 300M weights
-├── download_model.py            # Downloader for 88M weights
+├── download_weights.py          # Unified Hugging Face downloader (300M & 88M)
+├── download_300m_model.py       # Wrapper for 300M weights
+├── download_model.py            # Wrapper for 88M weights
 ├── upload_300m_to_hf.py         # Hugging Face upload script with model card & configs
-├── rigorous_20_story_benchmark.py # Automated 20-story multi-genre benchmark suite
-├── benchmark_20_stories_results.json # 40-scene benchmark outputs & score data
-├── spm_novel_16k.model          # SentencePiece 16K tokenizer model
-├── spm_novel_16k.vocab          # SentencePiece 16K vocabulary
+├── spm_novel_16k.model          # SentencePiece 16K tokenizer model (300M)
+├── spm_novel_16k.vocab          # SentencePiece 16K vocabulary (300M)
+├── spm_hf_master.model          # SentencePiece 4K tokenizer model (88M)
+├── spm_hf_master.vocab          # SentencePiece 4K vocabulary (88M)
+├── benchmarks/                  # 20-Genre benchmark suite & results
+│   ├── benchmark_20_stories_results.json
+│   └── rigorous_20_story_benchmark.py
+├── tests/                       # Automated test suites
+│   ├── test_dual_engine_suite.py
+│   ├── test_all_scenes_continuity.py
+│   ├── test_gui_generation_loop.py
+│   └── test_architecture.py
+├── scripts/training/            # Active training & dataset alignment pipelines
+│   ├── build_multi_scene_sft_dataset.py
+│   ├── train_multiscene_alignment.py
+│   ├── build_universal_continuity_sft.py
+│   └── train_universal_continuation.py
+├── src/                         # Modular package library
 ├── requirements.txt             # Dependencies
 └── README.md                    # Documentation
 ```

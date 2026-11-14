@@ -25,7 +25,8 @@ import torch
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = ROOT_DIR
 DATA_DIR = os.path.join(BASE_DIR, "data")
 TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_novel_16k.model")
 OUTPUT_PT = os.path.join(DATA_DIR, "universal_multiscene_tokens.pt")

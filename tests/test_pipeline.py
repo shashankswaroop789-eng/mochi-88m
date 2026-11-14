@@ -3,13 +3,19 @@ import os
 import torch
 import sentencepiece as spm
 
-sys.path.insert(0, 'C:/Users/user/.gemini/antigravity/scratch/gpt_from_scratch')
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+if TESTS_DIR not in sys.path:
+    sys.path.insert(0, TESTS_DIR)
+
 from modern_transformer import ModernGPT
 from test_all_scenes_continuity import clean_tail, generate_scene
 
 sp = spm.SentencePieceProcessor()
-sp.load('C:/Users/user/.gemini/antigravity/scratch/gpt_from_scratch/spm_novel_16k.model')
-ckpt = torch.load('C:/Users/user/.gemini/antigravity/scratch/gpt_from_scratch/mochi_novel_300m.pt', map_location='cuda', weights_only=False)
+sp.load(os.path.join(ROOT_DIR, 'spm_novel_16k.model'))
+ckpt = torch.load(os.path.join(ROOT_DIR, 'mochi_novel_300m.pt'), map_location='cuda', weights_only=False)
 model = ModernGPT(**dict(ckpt['config'], dropout=0.0)).to('cuda')
 model.load_state_dict(ckpt['model_state_dict'])
 model.eval()

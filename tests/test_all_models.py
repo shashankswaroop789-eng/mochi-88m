@@ -3,7 +3,9 @@ import sys
 import torch
 import sentencepiece as spm
 
-sys.path.insert(0, r"C:\Users\user\.gemini\antigravity\scratch\gpt_from_scratch")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 from modern_transformer import ModernGPT
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -18,8 +20,8 @@ models_to_test = [
 prompt = "### Prompt:\nWrite a short story about Shashank, a proud young mechanic working in a highway tin shed, and Rajesh Khanna, a wealthy businessman whose luxury car breaks down on the desert road.\n\n### Story:\n"
 
 for model_file, spm_file in models_to_test:
-    model_path = os.path.join(r"C:\Users\user\.gemini\antigravity\scratch\gpt_from_scratch", model_file)
-    spm_path = os.path.join(r"C:\Users\user\.gemini\antigravity\scratch\gpt_from_scratch", spm_file)
+    model_path = os.path.join(ROOT_DIR, model_file)
+    spm_path = os.path.join(ROOT_DIR, spm_file)
     if not os.path.exists(model_path) or not os.path.exists(spm_path):
         continue
 

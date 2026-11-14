@@ -23,16 +23,16 @@ import sentencepiece as spm
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-if BASE_DIR not in sys.path:
-    sys.path.insert(0, BASE_DIR)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
 from modern_transformer import ModernGPT
 
-CHECKPOINT_PATH = os.path.join(BASE_DIR, "mochi_novel_300m.pt")
-GOLDEN_PATH = os.path.join(BASE_DIR, "mochi_novel_300m_golden_rajput.pt")
-TOKENIZER_PATH = os.path.join(BASE_DIR, "spm_novel_16k.model")
-OUTPUT_JSON = os.path.join(BASE_DIR, "benchmark_20_stories_results.json")
+CHECKPOINT_PATH = os.path.join(ROOT_DIR, "mochi_novel_300m.pt")
+GOLDEN_PATH = os.path.join(ROOT_DIR, "mochi_novel_300m_golden_rajput.pt")
+TOKENIZER_PATH = os.path.join(ROOT_DIR, "spm_novel_16k.model")
+OUTPUT_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_20_stories_results.json")
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
